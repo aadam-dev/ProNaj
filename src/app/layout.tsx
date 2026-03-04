@@ -44,9 +44,13 @@ const satoshi = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "ProNaj International | Building the Infrastructure of the Future",
+  title: {
+    default: "ProNaj International | Building the Infrastructure of the Future",
+    template: "%s | ProNaj International",
+  },
   description:
     "ProNaj International - A global conglomerate spanning Digital Services, Modular Living Solutions, and Agricultural Trade. Delaware, USA headquarters with operations in Ghana.",
+  metadataBase: new URL("https://pronaj.com"),
   keywords: [
     "ProNaj",
     "Digital Services",
@@ -58,12 +62,23 @@ export const metadata: Metadata = {
     "Ghana Operations",
   ],
   authors: [{ name: "ProNaj International" }],
+  robots: {
+    index: true,
+    follow: true,
+  },
   openGraph: {
     title: "ProNaj International | Building the Infrastructure of the Future",
     description:
       "A global conglomerate spanning Digital Services, Modular Living Solutions, and Agricultural Trade.",
     type: "website",
     locale: "en_US",
+    siteName: "ProNaj International",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "ProNaj International",
+    description:
+      "A global conglomerate spanning Digital Services, Modular Living Solutions, and Agricultural Trade.",
   },
 };
 
