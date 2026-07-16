@@ -1,0 +1,102 @@
+{
+  "common": {
+    "language": "Language",
+    "learnMore": "Learn More",
+    "getStarted": "Get Started",
+    "requestQuote": "Request Quote",
+    "contactUs": "Contact Us"
+  },
+  "nav": {
+    "digital": "Digital",
+    "digitalDesc": "IT Services & Software Solutions",
+    "webDevelopment": "Web Development",
+    "cybersecurity": "Cybersecurity",
+    "softwareEngineering": "Software Engineering",
+    "living": "Living",
+    "livingDesc": "Modular Solutions & Design",
+    "furniture": "Furniture",
+    "containerHousing": "Container Housing",
+    "global": "Global",
+    "globalDesc": "Agriculture & Trade",
+    "cocopeatExport": "Cocopeat Export",
+    "greenhouseFarming": "Greenhouse Farming",
+    "goldCoastCroire": "Gold Coast Croire",
+    "about": "About",
+    "careers": "Careers",
+    "contact": "Contact"
+  },
+  "footer": {
+    "industries": "Industries",
+    "compliance": "Global Compliance",
+    "careers": "Careers",
+    "contact": "Contact"
+  },
+  "croire": {
+    "eyebrow": "Pronaj Global · Agribusiness",
+    "status": "Brand in development",
+    "title1": "Gold Coast",
+    "title2": "Croire",
+    "tagline": "Believe in the harvest.",
+    "intro": "Gold Coast Croire is Pronaj's agribusiness venture — one brand carrying Ghana's fertile coast to world markets. Premium growing substrate, greenhouse produce and value-added processing, built on the trade infrastructure Pronaj already operates.",
+    "whyTitle": "Why Croire",
+    "whyBody": "Croire is French for believe. The Gold Coast fed empires long before it exported gold — we believe its soil is still the region's most undervalued asset. Croire is our commitment to prove it: patient capital, precision agriculture, and a brand worthy of the coast it grows on.",
+    "pillarsEyebrow": "The Verticals",
+    "pillarsTitle": "Four ways we harvest value",
+    "pillars": {
+      "substrate": {
+        "title": "Cocopeat Substrate",
+        "desc": "Premium washed and buffered cocopeat, processed from Ghanaian coconut husk and compressed for export.",
+        "status": "Operating via Pronaj Global"
+      },
+      "greenhouse": {
+        "title": "Greenhouse Produce",
+        "desc": "Precision-grown vegetables under climate control — consistent quality, year-round supply.",
+        "status": "Operating via Pronaj Global"
+      },
+      "processing": {
+        "title": "Value-Added Processing",
+        "desc": "Moving up the chain: drying, grading and packaging at origin so more value stays in Ghana.",
+        "status": "In exploration"
+      },
+      "logistics": {
+        "title": "Export & Trade Logistics",
+        "desc": "Consolidated cold-chain and dry-cargo routes from Tema to Europe and the Middle East.",
+        "status": "In exploration"
+      }
+    },
+    "roadmapEyebrow": "The Road Ahead",
+    "roadmapTitle": "From exploration to scale",
+    "roadmap": {
+      "phase1": {
+        "year": "2026",
+        "title": "Explore",
+        "desc": "Validate crops, partners and demand across target markets. Secure certifications and land partnerships."
+      },
+      "phase2": {
+        "year": "2027",
+        "title": "Pilot",
+        "desc": "First branded shipments under Gold Coast Croire. Greenhouse expansion and initial processing lines."
+      },
+      "phase3": {
+        "year": "2028+",
+        "title": "Scale",
+        "desc": "Full processing capacity, a regional sourcing network, and Croire on shelves across three continents."
+      }
+    },
+    "ambitionEyebrow": "The Ambition",
+    "metrics": {
+      "substrate": { "value": "10K", "suffix": " MT", "label": "Substrate export target / yr" },
+      "yield": { "value": "130", "suffix": "+ t", "label": "Greenhouse yield today / yr" },
+      "continents": { "value": "3", "suffix": "", "label": "Continents in reach" },
+      "harvest": { "value": "2027", "suffix": "", "label": "First branded harvest" }
+    },
+    "disclaimer": "Targets reflect Pronaj's development plan for the Croire brand, not current production.",
+    "ctaTitle": "Partner with us early",
+    "ctaBody": "We are in conversation with distributors, growers and investors across Europe and the Middle East. If the Gold Coast belongs in your supply chain, let's talk.",
+    "ctaButton": "Start the conversation",
+    "backToGlobal": "Pronaj Global"
+  },
+  "home": {
+    "sectorLabel": "Sector"
+  }
+}

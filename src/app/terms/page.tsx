@@ -1,8 +1,8 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Terms of Service | ProNaj International",
-  description: "Terms of Service for ProNaj International LLC",
+  title: "Terms of Service | Pronaj International",
+  description: "Terms of Service for Pronaj International LLC",
 };
 
 export default function TermsPage() {
@@ -24,7 +24,7 @@ export default function TermsPage() {
             1. Acceptance of Terms
           </h2>
           <p className="text-steel dark:text-steel-light">
-            By accessing or using the services provided by ProNaj International
+            By accessing or using the services provided by Pronaj International
             LLC, you agree to be bound by these Terms of Service. If you do not
             agree to these terms, please do not use our services.
           </p>
@@ -33,7 +33,7 @@ export default function TermsPage() {
             2. Services
           </h2>
           <p className="text-steel dark:text-steel-light">
-            ProNaj International provides digital services, modular living
+            Pronaj International provides digital services, modular living
             solutions, and agricultural trade services. Specific terms may apply
             to individual services and will be provided at the time of
             engagement.
@@ -57,7 +57,7 @@ export default function TermsPage() {
           </h2>
           <p className="text-steel dark:text-steel-light">
             All content, trademarks, and intellectual property on this website
-            are owned by ProNaj International LLC. You may not use, reproduce,
+            are owned by Pronaj International LLC. You may not use, reproduce,
             or distribute our content without prior written permission.
           </p>
 
@@ -65,7 +65,7 @@ export default function TermsPage() {
             5. Limitation of Liability
           </h2>
           <p className="text-steel dark:text-steel-light">
-            To the maximum extent permitted by law, ProNaj International shall
+            To the maximum extent permitted by law, Pronaj International shall
             not be liable for any indirect, incidental, special, consequential,
             or punitive damages arising from your use of our services.
           </p>
@@ -88,7 +88,7 @@ export default function TermsPage() {
           <p className="font-mono text-sm text-steel dark:text-steel-light">
             legal@pronaj.com
             <br />
-            ProNaj International LLC
+            Pronaj International LLC
             <br />
             1209 Orange Street, Wilmington, DE 19801
           </p>

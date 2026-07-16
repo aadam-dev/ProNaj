@@ -38,7 +38,7 @@ export default function DigitalPage() {
                 <Monitor className="h-6 w-6" />
               </div>
               <span className="font-mono text-xs uppercase tracking-[0.2em] text-safety">
-                ProNaj Digital
+                Pronaj Digital
               </span>
             </motion.div>
 

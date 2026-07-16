@@ -4,7 +4,7 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* ProNaj Industrial Design System - Tailwind v4 Theme */
+/* Pronaj Industrial Design System - Tailwind v4 Theme */
 @theme inline {
   /* Typography */
   --font-sans: var(--font-satoshi), system-ui, sans-serif;

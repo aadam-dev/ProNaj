@@ -1,6 +1,6 @@
-# ProNaj International
+# Pronaj International
 
-Corporate website for ProNaj International, a conglomerate operating across three sectors: digital services, modular living solutions, and agricultural trade.
+Corporate website for Pronaj International, a conglomerate operating across three sectors: digital services, modular living solutions, and agricultural trade.
 
 ## Quick Start
 

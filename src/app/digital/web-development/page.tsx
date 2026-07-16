@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Code2, ArrowRight, Layers, Zap, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { WorkShowcase } from "@/components/digital";
 import { staggerContainer, mechanicalSlideUp } from "@/lib/animations";
 
 const features = [
@@ -223,6 +224,9 @@ export default function WebDevelopmentPage() {
           </div>
         </div>
       </section>
+
+      {/* Selected client work */}
+      <WorkShowcase />
 
       {/* CTA */}
       <section className="bg-concrete py-20 dark:bg-obsidian/50">

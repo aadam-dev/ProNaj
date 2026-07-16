@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 import { Space_Grotesk, JetBrains_Mono } from "next/font/google";
 import localFont from "next/font/local";
+import { NextIntlClientProvider } from "next-intl";
+import { getLocale, getMessages } from "next-intl/server";
 import { Header, Footer, MobileHub } from "@/components/layout";
+import { ScrollProgress } from "@/components/shared/scroll-progress";
 import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({
@@ -45,14 +48,14 @@ const satoshi = localFont({
 
 export const metadata: Metadata = {
   title: {
-    default: "ProNaj International | Building the Infrastructure of the Future",
-    template: "%s | ProNaj International",
+    default: "Pronaj International | Building the Infrastructure of the Future",
+    template: "%s | Pronaj International",
   },
   description:
-    "ProNaj International - A global conglomerate spanning Digital Services, Modular Living Solutions, and Agricultural Trade. Delaware, USA headquarters with operations in Ghana.",
+    "Pronaj International - A global conglomerate spanning Digital Services, Modular Living Solutions, and Agricultural Trade. Delaware, USA headquarters with operations in Ghana.",
   metadataBase: new URL("https://pronaj.com"),
   keywords: [
-    "ProNaj",
+    "Pronaj",
     "Digital Services",
     "Container Housing",
     "Modular Furniture",
@@ -61,41 +64,46 @@ export const metadata: Metadata = {
     "Delaware Corporation",
     "Ghana Operations",
   ],
-  authors: [{ name: "ProNaj International" }],
+  authors: [{ name: "Pronaj International" }],
   robots: {
     index: true,
     follow: true,
   },
   openGraph: {
-    title: "ProNaj International | Building the Infrastructure of the Future",
+    title: "Pronaj International | Building the Infrastructure of the Future",
     description:
       "A global conglomerate spanning Digital Services, Modular Living Solutions, and Agricultural Trade.",
     type: "website",
     locale: "en_US",
-    siteName: "ProNaj International",
+    siteName: "Pronaj International",
   },
   twitter: {
     card: "summary_large_image",
-    title: "ProNaj International",
+    title: "Pronaj International",
     description:
       "A global conglomerate spanning Digital Services, Modular Living Solutions, and Agricultural Trade.",
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const locale = await getLocale();
+  const messages = await getMessages();
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang={locale} dir={locale === "ar" ? "rtl" : "ltr"} suppressHydrationWarning>
       <body
         className={`${satoshi.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} font-sans antialiased`}
       >
-        <Header />
-        <main className="min-h-screen pb-20 lg:pb-0">{children}</main>
-        <Footer />
-        <MobileHub />
+        <NextIntlClientProvider locale={locale} messages={messages}>
+          <ScrollProgress />
+          <Header />
+          <main className="min-h-screen pb-20 lg:pb-0">{children}</main>
+          <Footer />
+          <MobileHub />
+        </NextIntlClientProvider>
       </body>
     </html>
   );

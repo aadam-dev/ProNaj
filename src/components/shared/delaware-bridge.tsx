@@ -68,7 +68,7 @@ export function DelawareBridge({ variant = "full" }: DelawareBridgeProps) {
               <span className="text-4xl">🇺🇸</span>
               <div>
                 <h3 className="font-heading text-xl font-bold text-obsidian dark:text-concrete">
-                  ProNaj International LLC
+                  Pronaj International LLC
                 </h3>
                 <p className="font-mono text-xs uppercase tracking-wider text-safety">
                   Delaware, USA • Parent Corporation
@@ -108,7 +108,7 @@ export function DelawareBridge({ variant = "full" }: DelawareBridgeProps) {
               <span className="text-4xl">🇬🇭</span>
               <div>
                 <h3 className="font-heading text-xl font-bold text-obsidian dark:text-concrete">
-                  ProNaj Ghana Ltd
+                  Pronaj Ghana Ltd
                 </h3>
                 <p className="font-mono text-xs uppercase tracking-wider text-safety">
                   Accra, Ghana • Operations Hub

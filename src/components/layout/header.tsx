@@ -2,11 +2,13 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { Menu } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+import { LanguageSwitcher } from "@/components/layout/language-switcher";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import {
   NavigationMenu,
@@ -21,44 +23,42 @@ import { mechanicalTransition } from "@/lib/animations";
 const sectors = [
   {
     id: "digital",
-    name: "Digital",
     href: "/digital",
-    description: "IT Services & Software Solutions",
     items: [
-      { name: "Web Development", href: "/digital/web-development" },
-      { name: "Cybersecurity", href: "/digital/cybersecurity" },
-      { name: "Software Engineering", href: "/digital/software-engineering" },
+      { key: "webDevelopment", href: "/digital/web-development" },
+      { key: "cybersecurity", href: "/digital/cybersecurity" },
+      { key: "softwareEngineering", href: "/digital/software-engineering" },
     ],
   },
   {
     id: "living",
-    name: "Living",
     href: "/living",
-    description: "Modular Solutions & Design",
     items: [
-      { name: "Furniture", href: "/living/furniture" },
-      { name: "Container Housing", href: "/living/container-housing" },
+      { key: "furniture", href: "/living/furniture" },
+      { key: "containerHousing", href: "/living/container-housing" },
     ],
   },
   {
     id: "global",
-    name: "Global",
     href: "/global",
-    description: "Agriculture & Trade",
     items: [
-      { name: "Cocopeat Export", href: "/global/cocopeat" },
-      { name: "Greenhouse Farming", href: "/global/greenhouse" },
+      { key: "goldCoastCroire", href: "/global/croire" },
+      { key: "cocopeatExport", href: "/global/cocopeat" },
+      { key: "greenhouseFarming", href: "/global/greenhouse" },
     ],
   },
-];
+] as const;
 
 const mainNav = [
-  { name: "About", href: "/about" },
-  { name: "Careers", href: "/careers" },
-  { name: "Contact", href: "/contact" },
-];
+  { key: "about", href: "/about" },
+  { key: "careers", href: "/careers" },
+  { key: "contact", href: "/contact" },
+] as const;
 
 export function Header() {
+  const t = useTranslations("nav");
+  const tc = useTranslations("common");
+  const tHome = useTranslations("home");
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -76,7 +76,7 @@ export function Header() {
           </div>
           <div className="hidden sm:block">
             <span className="font-heading text-lg font-bold tracking-tight text-obsidian dark:text-concrete">
-              ProNaj
+              Pronaj
             </span>
             <span className="ml-1 font-mono text-[10px] uppercase tracking-widest text-steel">
               International
@@ -97,7 +97,7 @@ export function Header() {
                         "text-safety"
                     )}
                   >
-                    {sector.name}
+                    {t(sector.id)}
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <div className="w-[400px] border-2 border-obsidian/10 bg-concrete p-4 dark:border-concrete/10 dark:bg-obsidian">
@@ -106,10 +106,10 @@ export function Header() {
                           href={sector.href}
                           className="font-heading text-lg font-bold text-obsidian hover:text-safety dark:text-concrete"
                         >
-                          ProNaj {sector.name}
+                          Pronaj {t(sector.id)}
                         </Link>
                         <p className="mt-1 font-mono text-xs text-steel">
-                          {sector.description}
+                          {t(`${sector.id}Desc`)}
                         </p>
                       </div>
                       <ul className="grid gap-2">
@@ -120,7 +120,7 @@ export function Header() {
                                 href={item.href}
                                 className="block rounded-sm px-3 py-2 font-medium text-obsidian/80 transition-mechanical hover:bg-obsidian/5 hover:text-safety dark:text-concrete/80 dark:hover:bg-concrete/5"
                               >
-                                {item.name}
+                                {t(item.key)}
                               </Link>
                             </NavigationMenuLink>
                           </li>
@@ -144,7 +144,7 @@ export function Header() {
                 pathname === item.href && "text-obsidian dark:text-concrete"
               )}
             >
-              {item.name}
+              {t(item.key)}
               {pathname === item.href && (
                 <motion.div
                   layoutId="nav-underline"
@@ -157,12 +157,13 @@ export function Header() {
         </nav>
 
         {/* CTA Button */}
-        <div className="hidden lg:block">
+        <div className="hidden items-center gap-3 lg:flex">
+          <LanguageSwitcher />
           <Button
             asChild
             className="bg-safety font-heading text-sm font-bold text-white hover:bg-safety/90"
           >
-            <Link href="/contact">Get Started</Link>
+            <Link href="/contact">{tc("getStarted")}</Link>
           </Button>
         </div>
 
@@ -187,7 +188,7 @@ export function Header() {
                     onClick={() => setMobileOpen(false)}
                     className="font-heading text-xl font-bold text-obsidian dark:text-concrete"
                   >
-                    {sector.name}
+                    {t(sector.id)}
                   </Link>
                   <div className="ml-4 space-y-1 border-l-2 border-obsidian/10 pl-4 dark:border-concrete/10">
                     {sector.items.map((item) => (
@@ -197,7 +198,7 @@ export function Header() {
                         onClick={() => setMobileOpen(false)}
                         className="block py-1 text-steel hover:text-safety"
                       >
-                        {item.name}
+                        {t(item.key)}
                       </Link>
                     ))}
                   </div>
@@ -214,16 +215,18 @@ export function Header() {
                   onClick={() => setMobileOpen(false)}
                   className="font-heading text-lg font-medium text-obsidian dark:text-concrete"
                 >
-                  {item.name}
+                  {t(item.key)}
                 </Link>
               ))}
+
+              <LanguageSwitcher className="w-fit" />
 
               <Button
                 asChild
                 className="mt-4 bg-safety font-heading font-bold text-white hover:bg-safety/90"
               >
                 <Link href="/contact" onClick={() => setMobileOpen(false)}>
-                  Get Started
+                  {tc("getStarted")}
                 </Link>
               </Button>
             </div>
@@ -240,10 +243,10 @@ export function Header() {
         >
           <div className="mx-auto flex max-w-7xl items-center gap-2 px-4 py-1.5 lg:px-8">
             <span className="font-mono text-[10px] uppercase tracking-widest text-steel">
-              Sector:
+              {tHome("sectorLabel")}:
             </span>
             <span className="font-heading text-sm font-bold text-safety">
-              {currentSector.name}
+              {t(currentSector.id)}
             </span>
           </div>
         </motion.div>

@@ -27,10 +27,10 @@ const values = [
 ];
 
 const timeline = [
-  { year: "2020", event: "ProNaj Ghana Ltd founded in Accra" },
+  { year: "2020", event: "Pronaj Ghana Ltd founded in Accra" },
   { year: "2021", event: "Launched digital services division" },
   { year: "2022", event: "Opened greenhouse farming facility" },
-  { year: "2023", event: "ProNaj International LLC incorporated in Delaware" },
+  { year: "2023", event: "Pronaj International LLC incorporated in Delaware" },
   { year: "2024", event: "Expanded to container housing manufacturing" },
   { year: "2025", event: "Cocopeat export reaches 25+ markets" },
 ];
@@ -43,7 +43,7 @@ export default function AboutPage() {
         <div className="absolute inset-0">
           <Image
             src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&q=80"
-            alt="ProNaj team"
+            alt="Pronaj team"
             fill
             className="object-cover opacity-20"
           />
@@ -61,7 +61,7 @@ export default function AboutPage() {
               variants={mechanicalSlideUp}
               className="font-mono text-xs uppercase tracking-[0.2em] text-safety"
             >
-              About ProNaj
+              About Pronaj
             </motion.p>
 
             <motion.h1
@@ -77,7 +77,7 @@ export default function AboutPage() {
               variants={mechanicalSlideUp}
               className="mt-6 text-lg text-steel-light lg:text-xl"
             >
-              ProNaj International is a multi-industry conglomerate bridging
+              Pronaj International is a multi-industry conglomerate bridging
               technology, sustainable living, and global trade. From our roots
               in Ghana to our Delaware headquarters, we&apos;re building
               solutions that matter.

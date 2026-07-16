@@ -1,0 +1,102 @@
+{
+  "common": {
+    "language": "Langue",
+    "learnMore": "En savoir plus",
+    "getStarted": "Commencer",
+    "requestQuote": "Demander un devis",
+    "contactUs": "Nous contacter"
+  },
+  "nav": {
+    "digital": "Digital",
+    "digitalDesc": "Services informatiques & logiciels",
+    "webDevelopment": "Développement web",
+    "cybersecurity": "Cybersécurité",
+    "softwareEngineering": "Ingénierie logicielle",
+    "living": "Living",
+    "livingDesc": "Solutions modulaires & design",
+    "furniture": "Mobilier",
+    "containerHousing": "Habitat conteneur",
+    "global": "Global",
+    "globalDesc": "Agriculture & commerce",
+    "cocopeatExport": "Export de cocopeat",
+    "greenhouseFarming": "Culture sous serre",
+    "goldCoastCroire": "Gold Coast Croire",
+    "about": "À propos",
+    "careers": "Carrières",
+    "contact": "Contact"
+  },
+  "footer": {
+    "industries": "Secteurs",
+    "compliance": "Conformité mondiale",
+    "careers": "Carrières",
+    "contact": "Contact"
+  },
+  "croire": {
+    "eyebrow": "Pronaj Global · Agro-industrie",
+    "status": "Marque en développement",
+    "title1": "Gold Coast",
+    "title2": "Croire",
+    "tagline": "Croire en la récolte.",
+    "intro": "Gold Coast Croire est l'aventure agro-industrielle de Pronaj — une marque qui porte la côte fertile du Ghana vers les marchés mondiaux. Substrat de culture premium, produits sous serre et transformation à valeur ajoutée, appuyés sur l'infrastructure commerciale que Pronaj exploite déjà.",
+    "whyTitle": "Pourquoi Croire",
+    "whyBody": "La Gold Coast nourrissait des empires bien avant d'exporter de l'or — nous croyons que son sol reste l'actif le plus sous-évalué de la région. Croire est notre engagement à le prouver : du capital patient, une agriculture de précision, et une marque à la hauteur de la côte qui la fait pousser.",
+    "pillarsEyebrow": "Les Verticales",
+    "pillarsTitle": "Quatre façons de récolter la valeur",
+    "pillars": {
+      "substrate": {
+        "title": "Substrat de cocopeat",
+        "desc": "Cocopeat premium lavé et tamponné, issu de la bourre de coco ghanéenne et compressé pour l'export.",
+        "status": "Exploité via Pronaj Global"
+      },
+      "greenhouse": {
+        "title": "Produits sous serre",
+        "desc": "Légumes cultivés avec précision sous climat contrôlé — qualité constante, approvisionnement toute l'année.",
+        "status": "Exploité via Pronaj Global"
+      },
+      "processing": {
+        "title": "Transformation à valeur ajoutée",
+        "desc": "Monter dans la chaîne : séchage, tri et conditionnement à l'origine pour que plus de valeur reste au Ghana.",
+        "status": "En exploration"
+      },
+      "logistics": {
+        "title": "Logistique d'export",
+        "desc": "Routes consolidées, chaîne du froid et cargaison sèche, de Tema vers l'Europe et le Moyen-Orient.",
+        "status": "En exploration"
+      }
+    },
+    "roadmapEyebrow": "La Feuille de Route",
+    "roadmapTitle": "De l'exploration à l'échelle",
+    "roadmap": {
+      "phase1": {
+        "year": "2026",
+        "title": "Explorer",
+        "desc": "Valider cultures, partenaires et demande sur les marchés cibles. Obtenir certifications et partenariats fonciers."
+      },
+      "phase2": {
+        "year": "2027",
+        "title": "Piloter",
+        "desc": "Premières expéditions sous la marque Gold Coast Croire. Extension des serres et premières lignes de transformation."
+      },
+      "phase3": {
+        "year": "2028+",
+        "title": "Passer à l'échelle",
+        "desc": "Pleine capacité de transformation, réseau d'approvisionnement régional, et Croire en rayon sur trois continents."
+      }
+    },
+    "ambitionEyebrow": "L'Ambition",
+    "metrics": {
+      "substrate": { "value": "10K", "suffix": " MT", "label": "Objectif d'export de substrat / an" },
+      "yield": { "value": "130", "suffix": "+ t", "label": "Rendement sous serre actuel / an" },
+      "continents": { "value": "3", "suffix": "", "label": "Continents à portée" },
+      "harvest": { "value": "2027", "suffix": "", "label": "Première récolte de marque" }
+    },
+    "disclaimer": "Les objectifs reflètent le plan de développement de la marque Croire, non la production actuelle.",
+    "ctaTitle": "Devenez partenaire tôt",
+    "ctaBody": "Nous échangeons avec des distributeurs, producteurs et investisseurs en Europe et au Moyen-Orient. Si la Gold Coast a sa place dans votre chaîne d'approvisionnement, parlons-en.",
+    "ctaButton": "Engager la conversation",
+    "backToGlobal": "Pronaj Global"
+  },
+  "home": {
+    "sectorLabel": "Secteur"
+  }
+}

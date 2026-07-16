@@ -6,6 +6,7 @@ import Image from "next/image";
 import { Globe, ArrowRight, Leaf, Ship } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { TradeRouteMap } from "@/components/global";
+import { CountUp } from "@/components/shared/count-up";
 import { staggerContainer, mechanicalSlideUp } from "@/lib/animations";
 
 const offerings = [
@@ -52,7 +53,7 @@ export default function GlobalPage() {
                 <Globe className="h-6 w-6" />
               </div>
               <span className="font-mono text-xs uppercase tracking-[0.2em] text-safety">
-                ProNaj Global
+                Pronaj Global
               </span>
             </motion.div>
 
@@ -105,7 +106,7 @@ export default function GlobalPage() {
               ].map((stat) => (
                 <div key={stat.label}>
                   <p className="font-heading text-2xl font-bold text-safety lg:text-3xl">
-                    {stat.value}
+                    <CountUp value={stat.value} />
                   </p>
                   <p className="mt-1 font-mono text-xs uppercase tracking-wider text-steel-light">
                     {stat.label}
@@ -119,6 +120,60 @@ export default function GlobalPage() {
 
       {/* Trade Route Map */}
       <TradeRouteMap />
+
+      {/* Gold Coast Croire — flagship brand in development */}
+      <section className="relative overflow-hidden bg-obsidian py-16 lg:py-20">
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 opacity-[0.07]"
+          style={{
+            backgroundImage:
+              "repeating-linear-gradient(105deg, #D4A017 0 2px, transparent 2px 56px)",
+          }}
+        />
+        <div className="relative mx-auto max-w-7xl px-4 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.4 }}
+            className="flex flex-col items-start justify-between gap-8 border-2 p-8 lg:flex-row lg:items-center lg:p-12"
+            style={{ borderColor: "rgba(212, 160, 23, 0.4)", background: "rgba(212, 160, 23, 0.06)" }}
+          >
+            <div className="max-w-2xl">
+              <div className="flex flex-wrap items-center gap-3">
+                <span className="font-mono text-xs uppercase tracking-[0.2em]" style={{ color: "#D4A017" }}>
+                  Agribusiness Brand
+                </span>
+                <span
+                  className="border px-2.5 py-0.5 font-mono text-[10px] uppercase tracking-[0.16em] text-concrete/70"
+                  style={{ borderColor: "rgba(212, 160, 23, 0.5)", background: "rgba(212, 160, 23, 0.12)" }}
+                >
+                  In development
+                </span>
+              </div>
+              <h2 className="mt-4 font-heading text-3xl font-bold text-concrete md:text-4xl">
+                Gold Coast <span style={{ color: "#D4A017" }}>Croire</span>
+              </h2>
+              <p className="mt-3 text-steel-light">
+                One brand carrying Ghana&apos;s fertile coast to world markets — substrate,
+                greenhouse produce and value-added processing under a single name.
+              </p>
+            </div>
+            <Button
+              asChild
+              size="lg"
+              className="shrink-0 font-heading font-bold text-obsidian hover:opacity-90"
+              style={{ background: "#D4A017" }}
+            >
+              <Link href="/global/croire">
+                Discover Croire
+                <ArrowRight className="ml-2 h-4 w-4 rtl:rotate-180" />
+              </Link>
+            </Button>
+          </motion.div>
+        </div>
+      </section>
 
       {/* Offerings */}
       <section className="bg-concrete py-20 dark:bg-obsidian/50 lg:py-32">
@@ -204,8 +259,8 @@ export default function GlobalPage() {
             </h2>
             <p className="mt-6 text-lg text-steel dark:text-steel-light">
               Our unique corporate structure enables seamless international
-              trade. ProNaj International LLC (Delaware) serves as the parent
-              company, providing US-compliant export capabilities while ProNaj
+              trade. Pronaj International LLC (Delaware) serves as the parent
+              company, providing US-compliant export capabilities while Pronaj
               Ghana Ltd handles local production and operations.
             </p>
 
@@ -213,7 +268,7 @@ export default function GlobalPage() {
               <div className="border-2 border-obsidian/10 p-6 dark:border-concrete/10">
                 <span className="text-3xl">🇺🇸</span>
                 <h3 className="mt-3 font-heading text-lg font-bold text-obsidian dark:text-concrete">
-                  ProNaj International LLC
+                  Pronaj International LLC
                 </h3>
                 <p className="mt-1 font-mono text-xs uppercase tracking-wider text-safety">
                   Delaware, USA
@@ -226,7 +281,7 @@ export default function GlobalPage() {
               <div className="border-2 border-obsidian/10 p-6 dark:border-concrete/10">
                 <span className="text-3xl">🇬🇭</span>
                 <h3 className="mt-3 font-heading text-lg font-bold text-obsidian dark:text-concrete">
-                  ProNaj Ghana Ltd
+                  Pronaj Ghana Ltd
                 </h3>
                 <p className="mt-1 font-mono text-xs uppercase tracking-wider text-safety">
                   Accra, Ghana

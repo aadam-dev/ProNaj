@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import {
   Linkedin,
@@ -14,7 +15,7 @@ import { staggerContainer, mechanicalSlideUp } from "@/lib/animations";
 
 const footerColumns = [
   {
-    title: "Industries",
+    titleKey: "industries",
     links: [
       { label: "Digital Services", href: "/digital" },
       { label: "Web Development", href: "/digital/web-development" },
@@ -22,11 +23,12 @@ const footerColumns = [
       { label: "Living Solutions", href: "/living" },
       { label: "Container Housing", href: "/living/container-housing" },
       { label: "Global Trade", href: "/global" },
+      { label: "Gold Coast Croire", href: "/global/croire" },
       { label: "Cocopeat Export", href: "/global/cocopeat" },
     ],
   },
   {
-    title: "Global Compliance",
+    titleKey: "compliance",
     links: [
       { label: "Export Compliance", href: "/compliance/export" },
       { label: "Privacy Policy", href: "/privacy" },
@@ -36,7 +38,7 @@ const footerColumns = [
     ],
   },
   {
-    title: "Careers",
+    titleKey: "careers",
     links: [
       { label: "Open Positions", href: "/careers" },
       { label: "Engineering", href: "/careers?dept=engineering" },
@@ -46,7 +48,7 @@ const footerColumns = [
     ],
   },
   {
-    title: "Contact",
+    titleKey: "contact",
     links: [
       { label: "General Inquiries", href: "/contact" },
       { label: "Sales", href: "/contact?type=sales" },
@@ -73,6 +75,7 @@ const locations = [
 ];
 
 export function Footer() {
+  const t = useTranslations("footer");
   return (
     <footer className="border-t-2 border-obsidian/10 bg-obsidian dark:border-concrete/10">
       {/* Main Footer Content */}
@@ -94,7 +97,7 @@ export function Footer() {
               </div>
             </Link>
             <p className="mt-4 font-heading text-lg font-bold text-concrete">
-              ProNaj International
+              Pronaj International
             </p>
             <p className="mt-2 text-sm text-steel-light">
               Building the infrastructure of the future through technology,
@@ -129,9 +132,9 @@ export function Footer() {
 
           {/* Link Columns */}
           {footerColumns.map((column) => (
-            <motion.div key={column.title} variants={mechanicalSlideUp}>
+            <motion.div key={t(column.titleKey)} variants={mechanicalSlideUp}>
               <h3 className="font-heading text-sm font-bold uppercase tracking-wider text-concrete">
-                {column.title}
+                {t(column.titleKey)}
               </h3>
               <ul className="mt-4 space-y-2">
                 {column.links.map((link) => (
@@ -201,7 +204,7 @@ export function Footer() {
       <div className="border-t border-steel/20 bg-obsidian">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-4 py-4 md:flex-row lg:px-8">
           <p className="font-mono text-[10px] tracking-wider text-steel">
-            © 2026 ProNaj International. All rights reserved.
+            © 2026 Pronaj International. All rights reserved.
           </p>
           <div className="flex items-center gap-4">
             <Link
@@ -224,7 +227,7 @@ export function Footer() {
             </Link>
           </div>
           <p className="font-mono text-[10px] tracking-wider text-steel">
-            Powered by ProNaj Engineering
+            Powered by Pronaj Engineering
           </p>
         </div>
       </div>

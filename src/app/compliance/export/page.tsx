@@ -2,8 +2,8 @@ import { Metadata } from "next";
 import { Shield, FileCheck, Globe, Scale } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Export Compliance | ProNaj International",
-  description: "Export compliance and regulatory information for ProNaj International LLC",
+  title: "Export Compliance | Pronaj International",
+  description: "Export compliance and regulatory information for Pronaj International LLC",
 };
 
 const certifications = [
@@ -40,7 +40,7 @@ export default function ExportCompliancePage() {
           Export Compliance
         </h1>
         <p className="mt-4 text-lg text-steel dark:text-steel-light">
-          ProNaj International maintains rigorous compliance standards for all
+          Pronaj International maintains rigorous compliance standards for all
           export operations, ensuring legal and ethical trade practices across
           all markets.
         </p>
@@ -76,7 +76,7 @@ export default function ExportCompliancePage() {
             </h2>
             <p className="mt-4 text-steel dark:text-steel-light">
               As a Delaware-registered corporation with operations in Ghana,
-              ProNaj International operates under a comprehensive compliance
+              Pronaj International operates under a comprehensive compliance
               framework that addresses both US and international trade
               regulations.
             </p>

@@ -53,7 +53,7 @@ export default function LivingPage() {
                 <Sofa className="h-6 w-6" />
               </div>
               <span className="font-mono text-xs uppercase tracking-[0.2em] text-safety">
-                ProNaj Living
+                Pronaj Living
               </span>
             </motion.div>
 

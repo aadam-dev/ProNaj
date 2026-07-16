@@ -83,7 +83,7 @@ export default function CareersPage() {
             >
               Build Your Future
               <br />
-              <span className="text-steel-light">With ProNaj</span>
+              <span className="text-steel-light">With Pronaj</span>
             </motion.h1>
 
             <motion.p

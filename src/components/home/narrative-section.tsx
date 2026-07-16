@@ -66,7 +66,7 @@ export function NarrativeSection() {
               variants={mechanicalSlideUp}
               className="mt-6 text-lg text-steel dark:text-steel-light"
             >
-              ProNaj International operates at the intersection of three
+              Pronaj International operates at the intersection of three
               critical industries. We believe that technological innovation,
               sustainable living solutions, and responsible global trade are not
               separate endeavors—they are interconnected pillars of a better

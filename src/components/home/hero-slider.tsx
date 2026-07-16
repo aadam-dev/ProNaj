@@ -113,7 +113,7 @@ export function HeroSlider() {
           className="mb-12 text-center lg:mb-16"
         >
           <p className="font-mono text-xs uppercase tracking-[0.3em] text-safety">
-            ProNaj International
+            Pronaj International
           </p>
           <h1 className="mt-4 font-heading text-4xl font-bold tracking-tight text-concrete md:text-5xl lg:text-6xl">
             Building the Infrastructure
