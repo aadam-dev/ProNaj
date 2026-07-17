@@ -2,47 +2,23 @@
 
 import { motion } from "framer-motion";
 import { Shield, FileCheck, Scale, Globe2 } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { staggerContainer, mechanicalSlideUp } from "@/lib/animations";
 
 const locations = [
-  {
-    flag: "🇺🇸",
-    country: "Delaware, USA",
-    role: "Parent Corporation",
-    description: "Registered under Delaware General Corporation Law",
-  },
-  {
-    flag: "🇬🇭",
-    country: "Accra, Ghana",
-    role: "Operations Hub",
-    description: "Manufacturing, agriculture, and regional operations",
-  },
-];
+  { flag: "🇺🇸", countryKey: "delawareCountry", roleKey: "delawareRole", descKey: "delawareDesc" },
+  { flag: "🇬🇭", countryKey: "accraCountry", roleKey: "accraRole", descKey: "accraDesc" },
+] as const;
 
 const badges = [
-  {
-    icon: Shield,
-    label: "Compliance & Security",
-    description: "SOC 2 Type II Certified",
-  },
-  {
-    icon: FileCheck,
-    label: "Export Certified",
-    description: "US & EU Export Compliant",
-  },
-  {
-    icon: Scale,
-    label: "Legal Structure",
-    description: "Delaware LLC Formation",
-  },
-  {
-    icon: Globe2,
-    label: "Global Operations",
-    description: "Multi-jurisdiction Presence",
-  },
-];
+  { icon: Shield, labelKey: "complianceLabel", descKey: "complianceDesc" },
+  { icon: FileCheck, labelKey: "exportLabel", descKey: "exportDesc" },
+  { icon: Scale, labelKey: "legalLabel", descKey: "legalDesc" },
+  { icon: Globe2, labelKey: "operationsLabel", descKey: "operationsDesc" },
+] as const;
 
 export function GlobalTrustBar() {
+  const t = useTranslations("home.trust");
   return (
     <section className="border-y-2 border-obsidian/10 bg-concrete dark:border-concrete/10 dark:bg-obsidian/50">
       <div className="mx-auto max-w-7xl px-4 py-12 lg:px-8 lg:py-16">
@@ -55,14 +31,13 @@ export function GlobalTrustBar() {
           {/* Section Header */}
           <motion.div variants={mechanicalSlideUp} className="mb-10 text-center">
             <p className="font-mono text-xs uppercase tracking-[0.2em] text-safety">
-              Global Presence
+              {t("presenceEyebrow")}
             </p>
             <h2 className="mt-2 font-heading text-2xl font-bold text-obsidian dark:text-concrete lg:text-3xl">
-              Delaware-Ghana Bridge
+              {t("bridgeTitle")}
             </h2>
             <p className="mt-2 text-steel dark:text-steel-light">
-              A unified corporate structure connecting American compliance with
-              African operations
+              {t("bridgeSubtitle")}
             </p>
           </motion.div>
 
@@ -73,19 +48,19 @@ export function GlobalTrustBar() {
           >
             {locations.map((location) => (
               <div
-                key={location.country}
+                key={location.countryKey}
                 className="group flex items-start gap-4 border-2 border-obsidian/10 bg-white p-6 transition-mechanical hover:border-safety/30 dark:border-concrete/10 dark:bg-obsidian"
               >
                 <span className="text-4xl">{location.flag}</span>
                 <div>
                   <h3 className="font-heading text-lg font-bold text-obsidian dark:text-concrete">
-                    {location.country}
+                    {t(location.countryKey)}
                   </h3>
                   <p className="font-mono text-xs uppercase tracking-wider text-safety">
-                    {location.role}
+                    {t(location.roleKey)}
                   </p>
                   <p className="mt-2 text-sm text-steel dark:text-steel-light">
-                    {location.description}
+                    {t(location.descKey)}
                   </p>
                 </div>
               </div>
@@ -114,7 +89,7 @@ export function GlobalTrustBar() {
               const Icon = badge.icon;
               return (
                 <div
-                  key={badge.label}
+                  key={badge.labelKey}
                   className="group flex items-center gap-3 border border-obsidian/10 bg-obsidian/5 p-4 transition-mechanical hover:border-safety/30 dark:border-concrete/10 dark:bg-concrete/5"
                 >
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center border border-obsidian/20 text-steel transition-mechanical group-hover:border-safety group-hover:text-safety dark:border-concrete/20">
@@ -122,10 +97,10 @@ export function GlobalTrustBar() {
                   </div>
                   <div>
                     <p className="font-heading text-sm font-bold text-obsidian dark:text-concrete">
-                      {badge.label}
+                      {t(badge.labelKey)}
                     </p>
                     <p className="font-mono text-[10px] uppercase tracking-wider text-steel">
-                      {badge.description}
+                      {t(badge.descKey)}
                     </p>
                   </div>
                 </div>

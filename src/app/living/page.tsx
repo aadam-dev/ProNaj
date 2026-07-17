@@ -5,28 +5,24 @@ import Link from "next/link";
 import Image from "next/image";
 import { Sofa, ArrowRight, Home, Package } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useTranslations } from "next-intl";
 import { staggerContainer, mechanicalSlideUp } from "@/lib/animations";
 
 const offerings = [
   {
-    icon: Package,
-    title: "Modular Furniture",
-    description: "IKEA-inspired flat-pack furniture designed for modern living",
-    href: "/living/furniture",
+    icon: Package, key: "furniture", href: "/living/furniture",
     image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&q=80",
-    features: ["Easy Assembly", "Sustainable Materials", "Timeless Design"],
+    featureKeys: ["furnitureF1", "furnitureF2", "furnitureF3"],
   },
   {
-    icon: Home,
-    title: "Container Housing",
-    description: "Prefabricated container homes for sustainable, efficient living",
-    href: "/living/container-housing",
+    icon: Home, key: "container", href: "/living/container-housing",
     image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
-    features: ["Quick Build", "Eco-Friendly", "Customizable"],
+    featureKeys: ["containerF1", "containerF2", "containerF3"],
   },
-];
+] as const;
 
 export default function LivingPage() {
+  const t = useTranslations("pages.living");
   return (
     <>
       {/* Hero */}
@@ -53,7 +49,7 @@ export default function LivingPage() {
                 <Sofa className="h-6 w-6" />
               </div>
               <span className="font-mono text-xs uppercase tracking-[0.2em] text-safety">
-                Pronaj Living
+                {t("eyebrow")}
               </span>
             </motion.div>
 
@@ -61,18 +57,16 @@ export default function LivingPage() {
               variants={mechanicalSlideUp}
               className="mt-6 font-heading text-4xl font-bold tracking-tight text-concrete md:text-5xl lg:text-6xl"
             >
-              Modular Solutions
+              {t("title1")}
               <br />
-              <span className="text-steel-light">for Modern Living</span>
+              <span className="text-steel-light">{t("title2")}</span>
             </motion.h1>
 
             <motion.p
               variants={mechanicalSlideUp}
               className="mt-6 text-lg text-steel-light lg:text-xl"
             >
-              From flat-pack furniture to prefabricated container homes, we
-              design and manufacture sustainable living solutions that combine
-              efficiency with elegance.
+{t("intro")}
             </motion.p>
 
             <motion.div variants={mechanicalSlideUp} className="mt-8 flex gap-4">
@@ -81,7 +75,7 @@ export default function LivingPage() {
                 className="bg-safety font-heading font-bold text-white hover:bg-safety/90"
               >
                 <Link href="/living/furniture">
-                  Browse Furniture
+                  {t("browseFurniture")}
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
@@ -90,7 +84,7 @@ export default function LivingPage() {
                 variant="outline"
                 className="border-concrete/20 font-heading font-bold text-concrete hover:bg-concrete/10"
               >
-                <Link href="/living/container-housing">View Homes</Link>
+                <Link href="/living/container-housing">{t("viewHomes")}</Link>
               </Button>
             </motion.div>
           </motion.div>
@@ -111,14 +105,14 @@ export default function LivingPage() {
               const Icon = offering.icon;
               return (
                 <motion.div
-                  key={offering.title}
+                  key={offering.key}
                   variants={mechanicalSlideUp}
                   className="group overflow-hidden border-2 border-obsidian/10 bg-white dark:border-concrete/10 dark:bg-obsidian"
                 >
                   <div className="relative aspect-[16/9] overflow-hidden">
                     <Image
                       src={offering.image}
-                      alt={offering.title}
+                      alt={t(`${offering.key}Title`)}
                       fill
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />
@@ -131,18 +125,18 @@ export default function LivingPage() {
                   </div>
                   <div className="p-8">
                     <h3 className="font-heading text-2xl font-bold text-obsidian dark:text-concrete">
-                      {offering.title}
+                      {t(`${offering.key}Title`)}
                     </h3>
                     <p className="mt-2 text-steel dark:text-steel-light">
-                      {offering.description}
+                      {t(`${offering.key}Desc`)}
                     </p>
                     <div className="mt-4 flex flex-wrap gap-2">
-                      {offering.features.map((feature) => (
+                      {offering.featureKeys.map((fk) => (
                         <span
-                          key={feature}
+                          key={fk}
                           className="border border-obsidian/10 px-2 py-1 font-mono text-xs text-steel dark:border-concrete/10"
                         >
-                          {feature}
+                          {t(fk)}
                         </span>
                       ))}
                     </div>
@@ -150,7 +144,7 @@ export default function LivingPage() {
                       href={offering.href}
                       className="mt-6 inline-flex items-center gap-2 font-heading font-bold text-obsidian transition-mechanical hover:text-safety dark:text-concrete"
                     >
-                      <span>Explore</span>
+                      <span>{t("explore")}</span>
                       <ArrowRight className="h-4 w-4 transition-mechanical group-hover:translate-x-1" />
                     </Link>
                   </div>
@@ -171,16 +165,13 @@ export default function LivingPage() {
             className="mx-auto max-w-3xl text-center"
           >
             <p className="font-mono text-xs uppercase tracking-[0.2em] text-safety">
-              Design Philosophy
+              {t("philosophyEyebrow")}
             </p>
             <h2 className="mt-4 font-heading text-3xl font-bold text-obsidian dark:text-concrete lg:text-4xl">
-              Form Follows Function
+              {t("philosophyTitle")}
             </h2>
             <p className="mt-6 text-lg text-steel dark:text-steel-light">
-              Every piece we create starts with a problem to solve. We believe
-              that great design should be accessible, sustainable, and built to
-              last. Our modular approach means less waste, easier transport, and
-              products that adapt to your life.
+{t("philosophyBody")}
             </p>
           </motion.div>
 
@@ -192,12 +183,12 @@ export default function LivingPage() {
             className="mt-16 grid gap-8 md:grid-cols-3"
           >
             {[
-              { value: "85%", label: "Recycled Materials" },
-              { value: "200+", label: "Homes Delivered" },
-              { value: "A+", label: "Sustainability Rating" },
+              { value: "85%", labelKey: "statRecycled" },
+              { value: "200+", labelKey: "statHomes" },
+              { value: "A+", labelKey: "statRating" },
             ].map((stat) => (
               <motion.div
-                key={stat.label}
+                key={stat.labelKey}
                 variants={mechanicalSlideUp}
                 className="border border-obsidian/10 p-8 text-center dark:border-concrete/10"
               >
@@ -205,7 +196,7 @@ export default function LivingPage() {
                   {stat.value}
                 </p>
                 <p className="mt-2 font-mono text-xs uppercase tracking-wider text-steel">
-                  {stat.label}
+                  {t(stat.labelKey)}
                 </p>
               </motion.div>
             ))}
@@ -217,11 +208,10 @@ export default function LivingPage() {
       <section className="bg-obsidian py-20">
         <div className="mx-auto max-w-7xl px-4 text-center lg:px-8">
           <h2 className="font-heading text-3xl font-bold text-concrete">
-            Ready to Transform Your Space?
+            {t("ctaTitle")}
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-steel-light">
-            Whether you need a single piece of furniture or a complete container
-            home, we&apos;re here to help.
+{t("ctaBody")}
           </p>
           <Button
             asChild
@@ -229,7 +219,7 @@ export default function LivingPage() {
             className="mt-8 bg-safety font-heading font-bold text-white hover:bg-safety/90"
           >
             <Link href="/contact?service=living">
-              Get in Touch
+              {t("ctaButton")}
               <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </Button>

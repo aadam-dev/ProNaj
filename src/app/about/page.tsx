@@ -6,36 +6,26 @@ import Link from "next/link";
 import { ArrowRight, Users, Target, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { DelawareBridge } from "@/components/shared";
+import { useTranslations } from "next-intl";
 import { staggerContainer, mechanicalSlideUp } from "@/lib/animations";
 
 const values = [
-  {
-    icon: Target,
-    title: "Precision",
-    description: "Every project, every product, every partnership is executed with meticulous attention to detail.",
-  },
-  {
-    icon: Globe,
-    title: "Global Reach",
-    description: "We bridge continents, connecting African excellence to international markets.",
-  },
-  {
-    icon: Users,
-    title: "People First",
-    description: "Our success is built on empowering our team and the communities we serve.",
-  },
-];
+  { icon: Target, titleKey: "precisionTitle", descKey: "precisionDesc" },
+  { icon: Globe, titleKey: "reachTitle", descKey: "reachDesc" },
+  { icon: Users, titleKey: "peopleTitle", descKey: "peopleDesc" },
+] as const;
 
 const timeline = [
-  { year: "2020", event: "Pronaj Ghana Ltd founded in Accra" },
-  { year: "2021", event: "Launched digital services division" },
-  { year: "2022", event: "Opened greenhouse farming facility" },
-  { year: "2023", event: "Pronaj International LLC incorporated in Delaware" },
-  { year: "2024", event: "Expanded to container housing manufacturing" },
-  { year: "2025", event: "Cocopeat export reaches 25+ markets" },
-];
+  { year: "2020", eventKey: "t2020" },
+  { year: "2021", eventKey: "t2021" },
+  { year: "2022", eventKey: "t2022" },
+  { year: "2023", eventKey: "t2023" },
+  { year: "2024", eventKey: "t2024" },
+  { year: "2025", eventKey: "t2025" },
+] as const;
 
 export default function AboutPage() {
+  const t = useTranslations("pages.about");
   return (
     <>
       {/* Hero */}
@@ -61,26 +51,23 @@ export default function AboutPage() {
               variants={mechanicalSlideUp}
               className="font-mono text-xs uppercase tracking-[0.2em] text-safety"
             >
-              About Pronaj
+              {t("eyebrow")}
             </motion.p>
 
             <motion.h1
               variants={mechanicalSlideUp}
               className="mt-4 font-heading text-4xl font-bold tracking-tight text-concrete md:text-5xl lg:text-6xl"
             >
-              Building the
+              {t("title1")}
               <br />
-              <span className="text-steel-light">Infrastructure of Tomorrow</span>
+              <span className="text-steel-light">{t("title2")}</span>
             </motion.h1>
 
             <motion.p
               variants={mechanicalSlideUp}
               className="mt-6 text-lg text-steel-light lg:text-xl"
             >
-              Pronaj International is a multi-industry conglomerate bridging
-              technology, sustainable living, and global trade. From our roots
-              in Ghana to our Delaware headquarters, we&apos;re building
-              solutions that matter.
+{t("intro")}
             </motion.p>
           </motion.div>
         </div>
@@ -96,10 +83,10 @@ export default function AboutPage() {
             className="mb-12 text-center"
           >
             <p className="font-mono text-xs uppercase tracking-[0.2em] text-safety">
-              Our Values
+              {t("valuesEyebrow")}
             </p>
             <h2 className="mt-2 font-heading text-3xl font-bold text-obsidian dark:text-concrete">
-              What Drives Us
+              {t("valuesTitle")}
             </h2>
           </motion.div>
 
@@ -114,7 +101,7 @@ export default function AboutPage() {
               const Icon = value.icon;
               return (
                 <motion.div
-                  key={value.title}
+                  key={value.titleKey}
                   variants={mechanicalSlideUp}
                   className="border-2 border-obsidian/10 bg-white p-8 dark:border-concrete/10 dark:bg-obsidian"
                 >
@@ -122,10 +109,10 @@ export default function AboutPage() {
                     <Icon className="h-6 w-6" />
                   </div>
                   <h3 className="font-heading text-xl font-bold text-obsidian dark:text-concrete">
-                    {value.title}
+                    {t(value.titleKey)}
                   </h3>
                   <p className="mt-2 text-steel dark:text-steel-light">
-                    {value.description}
+                    {t(value.descKey)}
                   </p>
                 </motion.div>
               );
@@ -151,10 +138,10 @@ export default function AboutPage() {
             className="mb-12 text-center"
           >
             <p className="font-mono text-xs uppercase tracking-[0.2em] text-safety">
-              Our Journey
+              {t("journeyEyebrow")}
             </p>
             <h2 className="mt-2 font-heading text-3xl font-bold text-concrete">
-              Timeline
+              {t("journeyTitle")}
             </h2>
           </motion.div>
 
@@ -188,7 +175,7 @@ export default function AboutPage() {
                     <p className="font-mono text-lg font-bold text-safety">
                       {item.year}
                     </p>
-                    <p className="mt-1 text-concrete">{item.event}</p>
+                    <p className="mt-1 text-concrete">{t(item.eventKey)}</p>
                   </div>
                 </div>
                 <div className="absolute left-4 flex h-3 w-3 items-center justify-center rounded-full bg-safety md:left-1/2 md:-translate-x-1/2" />
@@ -203,11 +190,10 @@ export default function AboutPage() {
       <section className="bg-concrete py-20 dark:bg-obsidian/50">
         <div className="mx-auto max-w-7xl px-4 text-center lg:px-8">
           <h2 className="font-heading text-3xl font-bold text-obsidian dark:text-concrete">
-            Join Our Journey
+            {t("ctaTitle")}
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-steel dark:text-steel-light">
-            We&apos;re always looking for talented individuals to join our team
-            across all divisions.
+            {t("ctaBody")}
           </p>
           <Button
             asChild
@@ -215,7 +201,7 @@ export default function AboutPage() {
             className="mt-8 bg-safety font-heading font-bold text-white hover:bg-safety/90"
           >
             <Link href="/careers">
-              View Open Positions
+              {t("ctaButton")}
               <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </Button>

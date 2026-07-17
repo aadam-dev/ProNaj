@@ -5,58 +5,49 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, Monitor, Sofa, Globe } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 import { mechanicalTransition, slowMechanicalTransition } from "@/lib/animations";
 
 const sectors = [
   {
     id: "digital",
-    name: "Digital",
-    tagline: "IT & Tech Services",
-    description:
-      "Web development, cybersecurity, and software engineering solutions for the modern enterprise.",
     href: "/digital",
     icon: Monitor,
     image:
       "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1920&q=80",
     stats: [
-      { label: "Projects Delivered", value: "500+" },
-      { label: "Uptime SLA", value: "99.9%" },
+      { key: "projectsDelivered", value: "500+" },
+      { key: "uptime", value: "99.9%" },
     ],
   },
   {
     id: "living",
-    name: "Living",
-    tagline: "Modular Solutions",
-    description:
-      "IKEA-inspired furniture and prefabricated container housing for sustainable, modern living.",
     href: "/living",
     icon: Sofa,
     image:
       "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&q=80",
     stats: [
-      { label: "Homes Built", value: "200+" },
-      { label: "Sustainability", value: "A+" },
+      { key: "homesBuilt", value: "200+" },
+      { key: "sustainability", value: "A+" },
     ],
   },
   {
     id: "global",
-    name: "Global",
-    tagline: "Agri-Trade & Export",
-    description:
-      "Cocopeat export and precision greenhouse farming, bridging Ghana to global markets via Delaware.",
     href: "/global",
     icon: Globe,
     image:
       "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1920&q=80",
     stats: [
-      { label: "Export Volume", value: "10K MT" },
-      { label: "Markets", value: "25+" },
+      { key: "exportVolume", value: "10K MT" },
+      { key: "markets", value: "25+" },
     ],
   },
-];
+] as const;
 
 export function HeroSlider() {
+  const t = useTranslations("home");
+  const tNav = useTranslations("nav");
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   return (
@@ -74,7 +65,7 @@ export function HeroSlider() {
           >
             <Image
               src={sectors[activeIndex].image}
-              alt={sectors[activeIndex].name}
+              alt={tNav(sectors[activeIndex].id)}
               fill
               className="object-cover"
               priority
@@ -113,12 +104,12 @@ export function HeroSlider() {
           className="mb-12 text-center lg:mb-16"
         >
           <p className="font-mono text-xs uppercase tracking-[0.3em] text-safety">
-            Pronaj International
+            {t("heroEyebrow")}
           </p>
           <h1 className="mt-4 font-heading text-4xl font-bold tracking-tight text-concrete md:text-5xl lg:text-6xl">
-            Building the Infrastructure
+            {t("heroTitle1")}
             <br />
-            <span className="text-steel-light">of the Future</span>
+            <span className="text-steel-light">{t("heroTitle2")}</span>
           </h1>
         </motion.div>
 
@@ -161,11 +152,11 @@ export function HeroSlider() {
                         isActive ? "text-safety" : "text-concrete"
                       )}
                     >
-                      {sector.name}
+                      {tNav(sector.id)}
                     </h2>
 
                     <p className="mt-1 font-mono text-xs uppercase tracking-wider text-steel-light">
-                      {sector.tagline}
+                      {t(`sectors.${sector.id}Tagline`)}
                     </p>
 
                     {/* Description - only visible when active */}
@@ -178,7 +169,7 @@ export function HeroSlider() {
                           transition={mechanicalTransition}
                           className="mt-4 text-sm text-steel-light lg:text-base"
                         >
-                          {sector.description}
+                          {t(`sectors.${sector.id}Desc`)}
                         </motion.p>
                       )}
                     </AnimatePresence>
@@ -197,12 +188,12 @@ export function HeroSlider() {
                           className="mb-6 grid grid-cols-2 gap-4"
                         >
                           {sector.stats.map((stat) => (
-                            <div key={stat.label}>
+                            <div key={stat.key}>
                               <p className="font-heading text-2xl font-bold text-safety">
                                 {stat.value}
                               </p>
                               <p className="font-mono text-[10px] uppercase tracking-wider text-steel">
-                                {stat.label}
+                                {t(`stats.${stat.key}`)}
                               </p>
                             </div>
                           ))}
@@ -220,7 +211,7 @@ export function HeroSlider() {
                           : "text-steel-light group-hover:text-safety"
                       )}
                     >
-                      <span>Explore {sector.name}</span>
+                      <span>{t("explore")} {tNav(sector.id)}</span>
                       <ArrowRight
                         className={cn(
                           "h-4 w-4 transition-mechanical",
@@ -245,7 +236,7 @@ export function HeroSlider() {
 
         {/* Mobile Hint */}
         <p className="mt-8 text-center font-mono text-xs text-steel lg:hidden">
-          Tap a sector to explore
+          {t("mobileHint")}
         </p>
       </div>
     </section>

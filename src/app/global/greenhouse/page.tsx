@@ -5,9 +5,11 @@ import Link from "next/link";
 import { Sprout, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { GreenhouseBreakdown } from "@/components/global";
+import { useTranslations } from "next-intl";
 import { staggerContainer, mechanicalSlideUp } from "@/lib/animations";
 
 export default function GreenhousePage() {
+  const t = useTranslations("pages.greenhouse");
   return (
     <>
       {/* Hero */}
@@ -34,7 +36,7 @@ export default function GreenhousePage() {
                 <Sprout className="h-5 w-5" />
               </div>
               <span className="font-mono text-xs uppercase tracking-[0.2em] text-safety">
-                Greenhouse Farming
+                {t("eyebrow")}
               </span>
             </motion.div>
 
@@ -42,19 +44,16 @@ export default function GreenhousePage() {
               variants={mechanicalSlideUp}
               className="mt-6 font-heading text-4xl font-bold tracking-tight text-concrete md:text-5xl"
             >
-              Precision
+              {t("title1")}
               <br />
-              <span className="text-steel-light">Agriculture</span>
+              <span className="text-steel-light">{t("title2")}</span>
             </motion.h1>
 
             <motion.p
               variants={mechanicalSlideUp}
               className="mt-6 text-lg text-steel-light"
             >
-              State-of-the-art greenhouse facilities in Ghana producing
-              year-round fresh produce using precision agriculture technology.
-              IoT monitoring, automated climate control, and sustainable
-              practices.
+{t("intro")}
             </motion.p>
 
             <motion.div variants={mechanicalSlideUp} className="mt-8 flex gap-4">
@@ -63,7 +62,7 @@ export default function GreenhousePage() {
                 className="bg-safety font-heading font-bold text-white hover:bg-safety/90"
               >
                 <Link href="/contact?service=greenhouse">
-                  Partner With Us
+                  {t("partner")}
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
@@ -72,7 +71,7 @@ export default function GreenhousePage() {
                 variant="outline"
                 className="border-concrete/20 font-heading font-bold text-concrete hover:bg-concrete/10"
               >
-                <Link href="#technology">View Technology</Link>
+                <Link href="#technology">{t("viewTech")}</Link>
               </Button>
             </motion.div>
 
@@ -82,16 +81,16 @@ export default function GreenhousePage() {
               className="mt-12 grid grid-cols-3 gap-8 border-t border-steel/20 pt-8"
             >
               {[
-                { value: "5 ha", label: "Facility Size" },
-                { value: "130+", label: "Tons/Year" },
-                { value: "365", label: "Days Active" },
+                { value: "5 ha", labelKey: "statSize" },
+                { value: "130+", labelKey: "statTons" },
+                { value: "365", labelKey: "statDays" },
               ].map((stat) => (
-                <div key={stat.label}>
+                <div key={stat.labelKey}>
                   <p className="font-heading text-2xl font-bold text-safety lg:text-3xl">
                     {stat.value}
                   </p>
                   <p className="mt-1 font-mono text-xs uppercase tracking-wider text-steel-light">
-                    {stat.label}
+                    {t(stat.labelKey)}
                   </p>
                 </div>
               ))}
@@ -115,16 +114,13 @@ export default function GreenhousePage() {
             className="mx-auto max-w-3xl text-center"
           >
             <p className="font-mono text-xs uppercase tracking-[0.2em] text-safety">
-              Sustainability
+              {t("sustainEyebrow")}
             </p>
             <h2 className="mt-4 font-heading text-3xl font-bold text-concrete lg:text-4xl">
-              Farming for the Future
+              {t("sustainTitle")}
             </h2>
             <p className="mt-6 text-lg text-steel-light">
-              Our greenhouse operations are designed with sustainability at
-              their core. From water recycling to solar power, we&apos;re
-              committed to minimizing our environmental footprint while
-              maximizing yield.
+              {t("sustainBody")}
             </p>
           </motion.div>
 
@@ -138,22 +134,22 @@ export default function GreenhousePage() {
             {[
               {
                 value: "40%",
-                label: "Water Savings",
-                description: "Compared to traditional farming methods",
+                labelKey: "mWater",
+                descKey: "mWaterDesc",
               },
               {
                 value: "60%",
-                label: "Solar Powered",
-                description: "Operations run on renewable energy",
+                labelKey: "mSolar",
+                descKey: "mSolarDesc",
               },
               {
                 value: "Zero",
-                label: "Chemical Runoff",
-                description: "Closed-loop irrigation system",
+                labelKey: "mRunoff",
+                descKey: "mRunoffDesc",
               },
             ].map((stat) => (
               <motion.div
-                key={stat.label}
+                key={stat.labelKey}
                 variants={mechanicalSlideUp}
                 className="border border-steel/20 p-8 text-center"
               >
@@ -161,9 +157,9 @@ export default function GreenhousePage() {
                   {stat.value}
                 </p>
                 <p className="mt-2 font-heading text-lg font-bold text-concrete">
-                  {stat.label}
+                  {t(stat.labelKey)}
                 </p>
-                <p className="mt-2 text-sm text-steel-light">{stat.description}</p>
+                <p className="mt-2 text-sm text-steel-light">{t(stat.descKey)}</p>
               </motion.div>
             ))}
           </motion.div>
@@ -174,11 +170,10 @@ export default function GreenhousePage() {
       <section className="bg-concrete py-20 dark:bg-obsidian/50">
         <div className="mx-auto max-w-7xl px-4 text-center lg:px-8">
           <h2 className="font-heading text-3xl font-bold text-obsidian dark:text-concrete">
-            Interested in Our Produce?
+            {t("ctaTitle")}
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-steel dark:text-steel-light">
-            We supply fresh produce to retailers, restaurants, and distributors.
-            Contact us to discuss supply agreements.
+{t("ctaBody")}
           </p>
           <Button
             asChild
@@ -186,7 +181,7 @@ export default function GreenhousePage() {
             className="mt-8 bg-safety font-heading font-bold text-white hover:bg-safety/90"
           >
             <Link href="/contact?service=greenhouse">
-              Contact Sales
+              {t("ctaButton")}
               <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </Button>

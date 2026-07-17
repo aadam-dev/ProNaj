@@ -5,40 +5,24 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight, Zap, Leaf, TrendingUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useTranslations } from "next-intl";
 import { staggerContainer, mechanicalSlideUp, blueprintReveal } from "@/lib/animations";
 
 const pillars = [
-  {
-    icon: Zap,
-    title: "Technology",
-    description:
-      "Cutting-edge digital solutions powering businesses across industries.",
-    color: "text-blue-500",
-  },
-  {
-    icon: Leaf,
-    title: "Sustainability",
-    description:
-      "Eco-conscious design in housing, furniture, and agricultural practices.",
-    color: "text-green-500",
-  },
-  {
-    icon: TrendingUp,
-    title: "Global Trade",
-    description:
-      "Connecting African resources to international markets through compliant channels.",
-    color: "text-safety",
-  },
-];
+  { icon: Zap, titleKey: "techTitle", descKey: "techDesc", color: "text-blue-500" },
+  { icon: Leaf, titleKey: "sustainTitle", descKey: "sustainDesc", color: "text-green-500" },
+  { icon: TrendingUp, titleKey: "tradeTitle", descKey: "tradeDesc", color: "text-safety" },
+] as const;
 
 const stats = [
-  { value: "3", label: "Business Sectors" },
-  { value: "2", label: "Continents" },
-  { value: "25+", label: "Global Markets" },
-  { value: "500+", label: "Projects Delivered" },
-];
+  { value: "3", labelKey: "statSectors" },
+  { value: "2", labelKey: "statContinents" },
+  { value: "25+", labelKey: "statMarkets" },
+  { value: "500+", labelKey: "statProjects" },
+] as const;
 
 export function NarrativeSection() {
+  const t = useTranslations("home.narrative");
   return (
     <section className="bg-white py-20 dark:bg-obsidian lg:py-32">
       <div className="mx-auto max-w-7xl px-4 lg:px-8">
@@ -53,12 +37,12 @@ export function NarrativeSection() {
           <div>
             <motion.div variants={mechanicalSlideUp}>
               <p className="font-mono text-xs uppercase tracking-[0.2em] text-safety">
-                Our Vision
+                {t("eyebrow")}
               </p>
               <h2 className="mt-4 font-heading text-3xl font-bold tracking-tight text-obsidian dark:text-concrete lg:text-4xl">
-                The Synergy of
+                {t("title1")}
                 <br />
-                <span className="text-steel">Tech, Housing & Resources</span>
+                <span className="text-steel">{t("title2")}</span>
               </h2>
             </motion.div>
 
@@ -66,11 +50,7 @@ export function NarrativeSection() {
               variants={mechanicalSlideUp}
               className="mt-6 text-lg text-steel dark:text-steel-light"
             >
-              Pronaj International operates at the intersection of three
-              critical industries. We believe that technological innovation,
-              sustainable living solutions, and responsible global trade are not
-              separate endeavors—they are interconnected pillars of a better
-              future.
+{t("body")}
             </motion.p>
 
             {/* Pillars */}
@@ -78,16 +58,16 @@ export function NarrativeSection() {
               {pillars.map((pillar) => {
                 const Icon = pillar.icon;
                 return (
-                  <div key={pillar.title} className="flex items-start gap-4">
+                  <div key={pillar.titleKey} className="flex items-start gap-4">
                     <div className="flex h-10 w-10 shrink-0 items-center justify-center border-2 border-obsidian/10 dark:border-concrete/10">
                       <Icon className={`h-5 w-5 ${pillar.color}`} />
                     </div>
                     <div>
                       <h3 className="font-heading font-bold text-obsidian dark:text-concrete">
-                        {pillar.title}
+                        {t(pillar.titleKey)}
                       </h3>
                       <p className="mt-1 text-sm text-steel dark:text-steel-light">
-                        {pillar.description}
+                        {t(pillar.descKey)}
                       </p>
                     </div>
                   </div>
@@ -101,7 +81,7 @@ export function NarrativeSection() {
                 className="bg-obsidian font-heading font-bold text-concrete hover:bg-obsidian/90 dark:bg-concrete dark:text-obsidian dark:hover:bg-concrete/90"
               >
                 <Link href="/about">
-                  Learn Our Story
+                  {t("cta")}
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
@@ -143,12 +123,12 @@ export function NarrativeSection() {
             >
               <div className="grid grid-cols-4 gap-4">
                 {stats.map((stat) => (
-                  <div key={stat.label} className="text-center">
+                  <div key={stat.labelKey} className="text-center">
                     <p className="font-heading text-2xl font-bold text-safety lg:text-3xl">
                       {stat.value}
                     </p>
                     <p className="mt-1 font-mono text-[9px] uppercase tracking-wider text-concrete/70 dark:text-obsidian/70 lg:text-[10px]">
-                      {stat.label}
+                      {t(stat.labelKey)}
                     </p>
                   </div>
                 ))}

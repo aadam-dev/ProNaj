@@ -5,9 +5,11 @@ import { Monitor, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { ServiceGrid, TechStackMarquee } from "@/components/digital";
 import { Button } from "@/components/ui/button";
+import { useTranslations } from "next-intl";
 import { staggerContainer, mechanicalSlideUp } from "@/lib/animations";
 
 export default function DigitalPage() {
+  const t = useTranslations("pages.digital");
   return (
     <>
       {/* Hero Section */}
@@ -38,7 +40,7 @@ export default function DigitalPage() {
                 <Monitor className="h-6 w-6" />
               </div>
               <span className="font-mono text-xs uppercase tracking-[0.2em] text-safety">
-                Pronaj Digital
+                {t("eyebrow")}
               </span>
             </motion.div>
 
@@ -46,18 +48,16 @@ export default function DigitalPage() {
               variants={mechanicalSlideUp}
               className="mt-6 font-heading text-4xl font-bold tracking-tight text-concrete md:text-5xl lg:text-6xl"
             >
-              IT Services &
+              {t("title1")}
               <br />
-              <span className="text-steel-light">Software Solutions</span>
+              <span className="text-steel-light">{t("title2")}</span>
             </motion.h1>
 
             <motion.p
               variants={mechanicalSlideUp}
               className="mt-6 text-lg text-steel-light lg:text-xl"
             >
-              Enterprise-grade web development, cybersecurity, and software
-              engineering services. We build robust digital infrastructure for
-              businesses ready to scale.
+{t("intro")}
             </motion.p>
 
             <motion.div variants={mechanicalSlideUp} className="mt-8 flex gap-4">
@@ -66,7 +66,7 @@ export default function DigitalPage() {
                 className="bg-safety font-heading font-bold text-white hover:bg-safety/90"
               >
                 <Link href="/contact?service=digital">
-                  Start a Project
+                  {t("startProject")}
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
@@ -75,7 +75,7 @@ export default function DigitalPage() {
                 variant="outline"
                 className="border-concrete/20 font-heading font-bold text-concrete hover:bg-concrete/10"
               >
-                <Link href="#services">View Services</Link>
+                <Link href="#services">{t("viewServices")}</Link>
               </Button>
             </motion.div>
           </motion.div>
@@ -95,14 +95,13 @@ export default function DigitalPage() {
             className="mb-12 text-center"
           >
             <p className="font-mono text-xs uppercase tracking-[0.2em] text-safety">
-              Our Services
+              {t("servicesEyebrow")}
             </p>
             <h2 className="mt-2 font-heading text-3xl font-bold text-obsidian dark:text-concrete lg:text-4xl">
-              Digital Excellence
+              {t("servicesTitle")}
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-steel dark:text-steel-light">
-              From concept to deployment, we deliver end-to-end digital solutions
-              with precision engineering and industry best practices.
+              {t("servicesBody")}
             </p>
           </motion.div>
 
@@ -119,11 +118,10 @@ export default function DigitalPage() {
             viewport={{ once: true }}
           >
             <h2 className="font-heading text-3xl font-bold text-obsidian dark:text-concrete lg:text-4xl">
-              Ready to Build Something Great?
+              {t("ctaTitle")}
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-steel dark:text-steel-light">
-              Let&apos;s discuss your project requirements and create a tailored
-              solution for your business.
+              {t("ctaBody")}
             </p>
             <Button
               asChild
@@ -131,7 +129,7 @@ export default function DigitalPage() {
               className="mt-8 bg-safety font-heading font-bold text-white hover:bg-safety/90"
             >
               <Link href="/contact?service=digital">
-                Schedule a Consultation
+                {t("ctaButton")}
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>

@@ -7,26 +7,16 @@ import { Globe, ArrowRight, Leaf, Ship } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { TradeRouteMap } from "@/components/global";
 import { CountUp } from "@/components/shared/count-up";
+import { useTranslations } from "next-intl";
 import { staggerContainer, mechanicalSlideUp } from "@/lib/animations";
 
 const offerings = [
-  {
-    icon: Leaf,
-    title: "Cocopeat Export",
-    description: "Premium cocopeat substrate exported from Ghana to global markets",
-    href: "/global/cocopeat",
-    stats: { value: "10K MT", label: "Annual Export" },
-  },
-  {
-    icon: Ship,
-    title: "Greenhouse Farming",
-    description: "Precision agriculture producing year-round fresh produce",
-    href: "/global/greenhouse",
-    stats: { value: "130+ tons", label: "Annual Yield" },
-  },
-];
+  { icon: Leaf, key: "cocopeat", href: "/global/cocopeat", stats: { value: "10K MT" } },
+  { icon: Ship, key: "greenhouse", href: "/global/greenhouse", stats: { value: "130+ tons" } },
+] as const;
 
 export default function GlobalPage() {
+  const t = useTranslations("pages.global");
   return (
     <>
       {/* Hero */}
@@ -53,7 +43,7 @@ export default function GlobalPage() {
                 <Globe className="h-6 w-6" />
               </div>
               <span className="font-mono text-xs uppercase tracking-[0.2em] text-safety">
-                Pronaj Global
+                {t("eyebrow")}
               </span>
             </motion.div>
 
@@ -61,18 +51,16 @@ export default function GlobalPage() {
               variants={mechanicalSlideUp}
               className="mt-6 font-heading text-4xl font-bold tracking-tight text-concrete md:text-5xl lg:text-6xl"
             >
-              Agriculture &
+              {t("title1")}
               <br />
-              <span className="text-steel-light">Global Trade</span>
+              <span className="text-steel-light">{t("title2")}</span>
             </motion.h1>
 
             <motion.p
               variants={mechanicalSlideUp}
               className="mt-6 text-lg text-steel-light lg:text-xl"
             >
-              Connecting African agricultural excellence to global markets
-              through our Delaware-Ghana corporate bridge. Cocopeat export,
-              precision greenhouse farming, and sustainable trade practices.
+{t("intro")}
             </motion.p>
 
             <motion.div variants={mechanicalSlideUp} className="mt-8 flex gap-4">
@@ -81,7 +69,7 @@ export default function GlobalPage() {
                 className="bg-safety font-heading font-bold text-white hover:bg-safety/90"
               >
                 <Link href="/global/cocopeat">
-                  Explore Cocopeat
+                  {t("exploreCocopeat")}
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
@@ -90,7 +78,7 @@ export default function GlobalPage() {
                 variant="outline"
                 className="border-concrete/20 font-heading font-bold text-concrete hover:bg-concrete/10"
               >
-                <Link href="/global/greenhouse">View Greenhouse</Link>
+                <Link href="/global/greenhouse">{t("viewGreenhouse")}</Link>
               </Button>
             </motion.div>
 
@@ -100,16 +88,16 @@ export default function GlobalPage() {
               className="mt-12 grid grid-cols-3 gap-8 border-t border-steel/20 pt-8"
             >
               {[
-                { value: "25+", label: "Markets" },
-                { value: "10K MT", label: "Annual Export" },
-                { value: "5 ha", label: "Greenhouse" },
+                { value: "25+", labelKey: "statMarkets" },
+                { value: "10K MT", labelKey: "statExport" },
+                { value: "5 ha", labelKey: "statGreenhouse" },
               ].map((stat) => (
-                <div key={stat.label}>
+                <div key={t(stat.labelKey)}>
                   <p className="font-heading text-2xl font-bold text-safety lg:text-3xl">
                     <CountUp value={stat.value} />
                   </p>
                   <p className="mt-1 font-mono text-xs uppercase tracking-wider text-steel-light">
-                    {stat.label}
+                    {t(stat.labelKey)}
                   </p>
                 </div>
               ))}
@@ -143,21 +131,20 @@ export default function GlobalPage() {
             <div className="max-w-2xl">
               <div className="flex flex-wrap items-center gap-3">
                 <span className="font-mono text-xs uppercase tracking-[0.2em]" style={{ color: "#D4A017" }}>
-                  Agribusiness Brand
+                  {t("croireBadge")}
                 </span>
                 <span
                   className="border px-2.5 py-0.5 font-mono text-[10px] uppercase tracking-[0.16em] text-concrete/70"
                   style={{ borderColor: "rgba(212, 160, 23, 0.5)", background: "rgba(212, 160, 23, 0.12)" }}
                 >
-                  In development
+                  {t("croireStatus")}
                 </span>
               </div>
               <h2 className="mt-4 font-heading text-3xl font-bold text-concrete md:text-4xl">
                 Gold Coast <span style={{ color: "#D4A017" }}>Croire</span>
               </h2>
               <p className="mt-3 text-steel-light">
-                One brand carrying Ghana&apos;s fertile coast to world markets — substrate,
-                greenhouse produce and value-added processing under a single name.
+{t("croireBody")}
               </p>
             </div>
             <Button
@@ -167,7 +154,7 @@ export default function GlobalPage() {
               style={{ background: "#D4A017" }}
             >
               <Link href="/global/croire">
-                Discover Croire
+                {t("croireCta")}
                 <ArrowRight className="ml-2 h-4 w-4 rtl:rotate-180" />
               </Link>
             </Button>
@@ -185,10 +172,10 @@ export default function GlobalPage() {
             className="mb-12 text-center"
           >
             <p className="font-mono text-xs uppercase tracking-[0.2em] text-safety">
-              Our Operations
+              {t("opsEyebrow")}
             </p>
             <h2 className="mt-2 font-heading text-3xl font-bold text-obsidian dark:text-concrete">
-              Agricultural Excellence
+              {t("opsTitle")}
             </h2>
           </motion.div>
 
@@ -203,7 +190,7 @@ export default function GlobalPage() {
               const Icon = offering.icon;
               return (
                 <motion.div
-                  key={offering.title}
+                  key={offering.key}
                   variants={mechanicalSlideUp}
                   className="group border-2 border-obsidian/10 bg-white p-8 transition-mechanical hover:border-safety/30 dark:border-concrete/10 dark:bg-obsidian lg:p-10"
                 >
@@ -216,23 +203,23 @@ export default function GlobalPage() {
                         {offering.stats.value}
                       </p>
                       <p className="font-mono text-[10px] uppercase tracking-wider text-steel">
-                        {offering.stats.label}
+                        {t(`${offering.key}StatLabel`)}
                       </p>
                     </div>
                   </div>
 
                   <h3 className="mt-6 font-heading text-2xl font-bold text-obsidian dark:text-concrete">
-                    {offering.title}
+                    {t(`${offering.key}Title`)}
                   </h3>
                   <p className="mt-3 text-steel dark:text-steel-light">
-                    {offering.description}
+                    {t(`${offering.key}Desc`)}
                   </p>
 
                   <Link
                     href={offering.href}
                     className="mt-6 inline-flex items-center gap-2 font-heading font-bold text-obsidian transition-mechanical hover:text-safety dark:text-concrete"
                   >
-                    <span>Learn More</span>
+                    <span>{t("learnMore")}</span>
                     <ArrowRight className="h-4 w-4 transition-mechanical group-hover:translate-x-1" />
                   </Link>
                 </motion.div>
@@ -252,43 +239,38 @@ export default function GlobalPage() {
             className="mx-auto max-w-3xl text-center"
           >
             <p className="font-mono text-xs uppercase tracking-[0.2em] text-safety">
-              Corporate Structure
+              {t("structureEyebrow")}
             </p>
             <h2 className="mt-4 font-heading text-3xl font-bold text-obsidian dark:text-concrete lg:text-4xl">
-              The Delaware-Ghana Bridge
+              {t("structureTitle")}
             </h2>
             <p className="mt-6 text-lg text-steel dark:text-steel-light">
-              Our unique corporate structure enables seamless international
-              trade. Pronaj International LLC (Delaware) serves as the parent
-              company, providing US-compliant export capabilities while Pronaj
-              Ghana Ltd handles local production and operations.
+{t("structureBody")}
             </p>
 
             <div className="mt-10 grid gap-6 md:grid-cols-2">
               <div className="border-2 border-obsidian/10 p-6 dark:border-concrete/10">
                 <span className="text-3xl">🇺🇸</span>
                 <h3 className="mt-3 font-heading text-lg font-bold text-obsidian dark:text-concrete">
-                  Pronaj International LLC
+                  {t("llcName")}
                 </h3>
                 <p className="mt-1 font-mono text-xs uppercase tracking-wider text-safety">
-                  Delaware, USA
+                  {t("llcLoc")}
                 </p>
                 <p className="mt-3 text-sm text-steel dark:text-steel-light">
-                  Parent company handling international contracts, export
-                  compliance, and global market access.
+{t("llcDesc")}
                 </p>
               </div>
               <div className="border-2 border-obsidian/10 p-6 dark:border-concrete/10">
                 <span className="text-3xl">🇬🇭</span>
                 <h3 className="mt-3 font-heading text-lg font-bold text-obsidian dark:text-concrete">
-                  Pronaj Ghana Ltd
+                  {t("ghanaName")}
                 </h3>
                 <p className="mt-1 font-mono text-xs uppercase tracking-wider text-safety">
-                  Accra, Ghana
+                  {t("ghanaLoc")}
                 </p>
                 <p className="mt-3 text-sm text-steel dark:text-steel-light">
-                  Operations subsidiary managing production, local sourcing, and
-                  regional distribution.
+{t("ghanaDesc")}
                 </p>
               </div>
             </div>
@@ -300,11 +282,10 @@ export default function GlobalPage() {
       <section className="bg-obsidian py-20">
         <div className="mx-auto max-w-7xl px-4 text-center lg:px-8">
           <h2 className="font-heading text-3xl font-bold text-concrete">
-            Partner With Us
+            {t("ctaTitle")}
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-steel-light">
-            Whether you&apos;re a distributor, retailer, or agricultural
-            business, we&apos;re ready to discuss partnership opportunities.
+{t("ctaBody")}
           </p>
           <Button
             asChild
@@ -312,7 +293,7 @@ export default function GlobalPage() {
             className="mt-8 bg-safety font-heading font-bold text-white hover:bg-safety/90"
           >
             <Link href="/contact?service=global">
-              Discuss Partnership
+              {t("ctaButton")}
               <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </Button>
