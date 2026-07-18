@@ -13,19 +13,11 @@ import {
 
 const OFFICES = [
   {
-    flag: "🇺🇸",
-    name: "Delaware, USA",
-    type: "Headquarters",
-    address: "1209 Orange Street, Wilmington, DE 19801",
-    email: "usa@pronaj.com",
-    phone: "+1 (302) 555-0100",
-  },
-  {
     flag: "🇬🇭",
     name: "Accra, Ghana",
-    type: "Operations Hub",
+    type: "Headquarters",
     address: "Airport Residential Area, Accra",
-    email: "ghana@pronaj.com",
+    email: "hello@pronaj.com",
     phone: "+233 30 255 0100",
   },
 ] as const;

@@ -61,15 +61,9 @@ const footerColumns = [
 
 const locations = [
   {
-    flag: "🇺🇸",
-    name: "Delaware, USA",
-    type: "Parent Corporation",
-    address: "1209 Orange Street, Wilmington, DE 19801",
-  },
-  {
     flag: "🇬🇭",
     name: "Accra, Ghana",
-    type: "Operations Hub",
+    type: "Headquarters",
     address: "Airport Residential Area, Accra",
   },
 ];
@@ -194,7 +188,7 @@ export function Footer() {
           <div className="flex items-center gap-2 rounded-sm border border-steel/20 bg-steel/5 px-3 py-2">
             <Scale className="h-4 w-4 text-safety" />
             <span className="font-mono text-xs text-steel-light">
-              Delaware LLC
+              Ghana Registered
             </span>
           </div>
         </div>

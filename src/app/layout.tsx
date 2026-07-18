@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     template: "%s | Pronaj International",
   },
   description:
-    "Pronaj International - A global conglomerate spanning Digital Services, Modular Living Solutions, and Agricultural Trade. Delaware, USA headquarters with operations in Ghana.",
+    "Pronaj International - a Ghana-based group spanning Digital Services, Modular Living Solutions, and Agricultural Trade. Headquartered in Accra, serving clients across Africa, Europe and the Middle East.",
   metadataBase: new URL("https://pronaj.com"),
   keywords: [
     "Pronaj",
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     "Modular Furniture",
     "Cocopeat Export",
     "Greenhouse Farming",
-    "Delaware Corporation",
+    "Ghana Business",
     "Ghana Operations",
   ],
   authors: [{ name: "Pronaj International" }],

@@ -229,7 +229,7 @@ export default function GlobalPage() {
         </div>
       </section>
 
-      {/* Delaware Bridge Highlight */}
+      {/* Structure */}
       <section className="border-y-2 border-obsidian/10 bg-white py-20 dark:border-concrete/10 dark:bg-obsidian lg:py-32">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
           <motion.div
@@ -249,8 +249,8 @@ export default function GlobalPage() {
             </p>
 
             <div className="mt-10 grid gap-6 md:grid-cols-2">
-              <div className="border-2 border-obsidian/10 p-6 dark:border-concrete/10">
-                <span className="text-3xl">🇺🇸</span>
+              <div className="border-2 border-dashed border-obsidian/15 p-6 dark:border-concrete/15">
+                <span className="text-3xl">🌍</span>
                 <h3 className="mt-3 font-heading text-lg font-bold text-obsidian dark:text-concrete">
                   {t("llcName")}
                 </h3>

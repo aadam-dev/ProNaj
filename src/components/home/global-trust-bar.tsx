@@ -6,8 +6,8 @@ import { useTranslations } from "next-intl";
 import { staggerContainer, mechanicalSlideUp } from "@/lib/animations";
 
 const locations = [
-  { flag: "🇺🇸", countryKey: "delawareCountry", roleKey: "delawareRole", descKey: "delawareDesc" },
-  { flag: "🇬🇭", countryKey: "accraCountry", roleKey: "accraRole", descKey: "accraDesc" },
+  { flag: "🇬🇭", countryKey: "delawareCountry", roleKey: "delawareRole", descKey: "delawareDesc" },
+  { flag: "🌍", countryKey: "accraCountry", roleKey: "accraRole", descKey: "accraDesc" },
 ] as const;
 
 const badges = [

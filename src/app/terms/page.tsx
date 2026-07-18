@@ -2,7 +2,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Terms of Service | Pronaj International",
-  description: "Terms of Service for Pronaj International LLC",
+  description: "Terms of Service for Pronaj International",
 };
 
 export default function TermsPage() {
@@ -24,8 +24,7 @@ export default function TermsPage() {
             1. Acceptance of Terms
           </h2>
           <p className="text-steel dark:text-steel-light">
-            By accessing or using the services provided by Pronaj International
-            LLC, you agree to be bound by these Terms of Service. If you do not
+            By accessing or using the services provided by Pronaj International, you agree to be bound by these Terms of Service. If you do not
             agree to these terms, please do not use our services.
           </p>
 
@@ -57,7 +56,7 @@ export default function TermsPage() {
           </h2>
           <p className="text-steel dark:text-steel-light">
             All content, trademarks, and intellectual property on this website
-            are owned by Pronaj International LLC. You may not use, reproduce,
+            are owned by Pronaj International. You may not use, reproduce,
             or distribute our content without prior written permission.
           </p>
 
@@ -75,7 +74,7 @@ export default function TermsPage() {
           </h2>
           <p className="text-steel dark:text-steel-light">
             These terms shall be governed by and construed in accordance with
-            the laws of the State of Delaware, United States, without regard to
+            the laws of the Republic of Ghana, without regard to
             its conflict of law provisions.
           </p>
 
@@ -88,9 +87,9 @@ export default function TermsPage() {
           <p className="font-mono text-sm text-steel dark:text-steel-light">
             legal@pronaj.com
             <br />
-            Pronaj International LLC
+            Pronaj International
             <br />
-            1209 Orange Street, Wilmington, DE 19801
+            Airport Residential Area, Accra, Ghana
           </p>
         </div>
       </div>

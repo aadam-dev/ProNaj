@@ -8,7 +8,7 @@ const routes = [
   {
     id: "ghana-us",
     origin: { name: "Accra", country: "Ghana", x: 48, y: 52 },
-    destination: { name: "Delaware", country: "USA", x: 25, y: 38 },
+    destination: { name: "New York", country: "USA", x: 25, y: 38 },
     product: "Cocopeat",
     volume: "5,000 MT/year",
   },
@@ -53,7 +53,7 @@ export function TradeRouteMap() {
             Trade Routes
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-steel-light">
-            Our Delaware-Ghana bridge enables compliant export to markets across
+            Our Ghana export operation reaches compliant markets across
             North America, Europe, and beyond.
           </p>
         </motion.div>

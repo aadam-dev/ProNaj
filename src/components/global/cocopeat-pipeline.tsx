@@ -24,7 +24,7 @@ const pipelineSteps = [
     icon: Ship,
     title: "Export",
     location: "Tema Port",
-    description: "Shipped via Delaware parent company to global markets",
+    description: "Shipped from Ghana to global markets",
     details: ["US Compliant", "EU Certified", "Phytosanitary"],
   },
   {
@@ -62,8 +62,8 @@ export function CocopeatPipeline() {
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-steel dark:text-steel-light">
             Our vertically integrated cocopeat operation ensures quality control
-            from production to delivery, with full export compliance through our
-            Delaware parent company.
+            from production to delivery, with full export compliance,
+            direct from Ghana.
           </p>
         </motion.div>
 

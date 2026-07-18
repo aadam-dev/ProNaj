@@ -1,35 +1,36 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Building2, ArrowDown, Shield, FileCheck } from "lucide-react";
+import { ArrowDown, Globe2, Sprout } from "lucide-react";
 import { staggerContainer, mechanicalSlideUp } from "@/lib/animations";
 
 interface DelawareBridgeProps {
   variant?: "full" | "compact";
 }
 
+/** Ghana-first corporate structure. International structure is added only as export/investor needs require. */
 export function DelawareBridge({ variant = "full" }: DelawareBridgeProps) {
   if (variant === "compact") {
     return (
       <div className="border-2 border-obsidian/10 bg-white p-6 dark:border-concrete/10 dark:bg-obsidian">
         <p className="mb-4 font-mono text-xs uppercase tracking-[0.2em] text-safety">
-          Corporate Structure
+          Our Structure
         </p>
         <div className="flex items-center gap-4">
-          <div className="text-center">
-            <span className="text-2xl">🇺🇸</span>
-            <p className="mt-1 font-heading text-sm font-bold text-obsidian dark:text-concrete">
-              Delaware
-            </p>
-            <p className="font-mono text-[10px] text-steel">Parent</p>
-          </div>
-          <ArrowDown className="h-4 w-4 rotate-[-90deg] text-safety" />
           <div className="text-center">
             <span className="text-2xl">🇬🇭</span>
             <p className="mt-1 font-heading text-sm font-bold text-obsidian dark:text-concrete">
               Ghana
             </p>
-            <p className="font-mono text-[10px] text-steel">Operations</p>
+            <p className="font-mono text-[10px] text-steel">Home Base</p>
+          </div>
+          <ArrowDown className="h-4 w-4 rotate-[-90deg] text-safety" />
+          <div className="text-center">
+            <span className="text-2xl">🌍</span>
+            <p className="mt-1 font-heading text-sm font-bold text-obsidian dark:text-concrete">
+              International
+            </p>
+            <p className="font-mono text-[10px] text-steel">As Needed</p>
           </div>
         </div>
       </div>
@@ -48,46 +49,42 @@ export function DelawareBridge({ variant = "full" }: DelawareBridgeProps) {
       <div className="border-b border-obsidian/10 p-6 dark:border-concrete/10 lg:p-8">
         <motion.div variants={mechanicalSlideUp} className="text-center">
           <p className="font-mono text-xs uppercase tracking-[0.2em] text-safety">
-            Corporate Structure
+            Our Structure
           </p>
           <h2 className="mt-2 font-heading text-2xl font-bold text-obsidian dark:text-concrete lg:text-3xl">
-            The Delaware-Ghana Bridge
+            Ghana-first, built to scale
           </h2>
         </motion.div>
       </div>
 
       {/* Structure Diagram */}
       <div className="p-6 lg:p-8">
-        <motion.div
-          variants={mechanicalSlideUp}
-          className="mx-auto max-w-2xl"
-        >
-          {/* Parent Company */}
-          <div className="relative border-2 border-obsidian/10 bg-concrete/50 p-6 dark:border-concrete/10 dark:bg-obsidian/50">
+        <motion.div variants={mechanicalSlideUp} className="mx-auto max-w-2xl">
+          {/* Home base — Ghana */}
+          <div className="relative border-2 border-safety/40 bg-concrete/50 p-6 dark:bg-obsidian/50">
             <div className="flex items-center gap-4">
-              <span className="text-4xl">🇺🇸</span>
+              <span className="text-4xl">🇬🇭</span>
               <div>
                 <h3 className="font-heading text-xl font-bold text-obsidian dark:text-concrete">
-                  Pronaj International LLC
+                  Pronaj Ghana
                 </h3>
                 <p className="font-mono text-xs uppercase tracking-wider text-safety">
-                  Delaware, USA • Parent Corporation
+                  Accra, Ghana • Home Base
                 </p>
               </div>
             </div>
             <div className="mt-4 flex flex-wrap gap-2">
-              <span className="flex items-center gap-1 border border-obsidian/10 px-2 py-1 text-xs text-steel dark:border-concrete/10">
-                <Shield className="h-3 w-3" />
-                US Compliance
-              </span>
-              <span className="flex items-center gap-1 border border-obsidian/10 px-2 py-1 text-xs text-steel dark:border-concrete/10">
-                <FileCheck className="h-3 w-3" />
-                Export Authority
-              </span>
-              <span className="flex items-center gap-1 border border-obsidian/10 px-2 py-1 text-xs text-steel dark:border-concrete/10">
-                <Building2 className="h-3 w-3" />
-                Holding Company
-              </span>
+              {["Ghana-Registered", "Manufacturing", "Agriculture", "Local Distribution"].map(
+                (tag) => (
+                  <span
+                    key={tag}
+                    className="flex items-center gap-1 border border-obsidian/10 px-2 py-1 text-xs text-steel dark:border-concrete/10"
+                  >
+                    <Sprout className="h-3 w-3" />
+                    {tag}
+                  </span>
+                )
+              )}
             </div>
           </div>
 
@@ -97,47 +94,47 @@ export function DelawareBridge({ variant = "full" }: DelawareBridgeProps) {
               <div className="h-8 w-px bg-safety" />
               <ArrowDown className="h-5 w-5 text-safety" />
               <p className="mt-1 font-mono text-[10px] uppercase tracking-wider text-steel">
-                Wholly Owned
+                Scales Toward
               </p>
             </div>
           </div>
 
-          {/* Subsidiary */}
-          <div className="relative border-2 border-obsidian/10 bg-concrete/50 p-6 dark:border-concrete/10 dark:bg-obsidian/50">
+          {/* International structure — as needed */}
+          <div className="relative border-2 border-dashed border-obsidian/15 bg-concrete/30 p-6 dark:border-concrete/15 dark:bg-obsidian/30">
             <div className="flex items-center gap-4">
-              <span className="text-4xl">🇬🇭</span>
+              <span className="text-4xl">🌍</span>
               <div>
                 <h3 className="font-heading text-xl font-bold text-obsidian dark:text-concrete">
-                  Pronaj Ghana Ltd
+                  International Structure
                 </h3>
                 <p className="font-mono text-xs uppercase tracking-wider text-safety">
-                  Accra, Ghana • Operations Hub
+                  Established as needed
                 </p>
               </div>
             </div>
             <div className="mt-4 flex flex-wrap gap-2">
-              <span className="flex items-center gap-1 border border-obsidian/10 px-2 py-1 text-xs text-steel dark:border-concrete/10">
-                Manufacturing
-              </span>
-              <span className="flex items-center gap-1 border border-obsidian/10 px-2 py-1 text-xs text-steel dark:border-concrete/10">
-                Agriculture
-              </span>
-              <span className="flex items-center gap-1 border border-obsidian/10 px-2 py-1 text-xs text-steel dark:border-concrete/10">
-                Local Distribution
-              </span>
+              {["Export Contracts", "Investor-Ready", "Added When Warranted"].map((tag) => (
+                <span
+                  key={tag}
+                  className="flex items-center gap-1 border border-obsidian/10 px-2 py-1 text-xs text-steel dark:border-concrete/10"
+                >
+                  <Globe2 className="h-3 w-3" />
+                  {tag}
+                </span>
+              ))}
             </div>
           </div>
         </motion.div>
 
-        {/* Legal Note */}
+        {/* Note */}
         <motion.div
           variants={mechanicalSlideUp}
           className="mt-8 border-t border-obsidian/10 pt-6 text-center dark:border-concrete/10"
         >
           <p className="font-mono text-xs text-steel dark:text-steel-light">
-            Registered under Delaware General Corporation Law. Operations
-            conducted through wholly-owned subsidiary in accordance with
-            applicable US and Ghanaian regulations.
+            Registered and operated in Ghana. We add international structure — such as a
+            US entity — only when export contracts or investors require it, scaling
+            deliberately from a strong local base.
           </p>
         </motion.div>
       </div>

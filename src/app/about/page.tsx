@@ -121,7 +121,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Delaware Bridge */}
+      {/* Structure */}
       <section className="border-y-2 border-obsidian/10 bg-white py-20 dark:border-concrete/10 dark:bg-obsidian lg:py-32">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
           <DelawareBridge />
