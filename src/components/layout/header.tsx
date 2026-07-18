@@ -78,9 +78,6 @@ export function Header() {
             <span className="font-heading text-lg font-bold tracking-tight text-obsidian dark:text-concrete">
               Pronaj
             </span>
-            <span className="ml-1 font-mono text-[10px] uppercase tracking-widest text-steel">
-              International
-            </span>
           </div>
         </Link>
 

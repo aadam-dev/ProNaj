@@ -1,8 +1,8 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Terms of Service | Pronaj International",
-  description: "Terms of Service for Pronaj International",
+  title: "Terms of Service | Pronaj",
+  description: "Terms of Service for Pronaj",
 };
 
 export default function TermsPage() {
@@ -24,7 +24,7 @@ export default function TermsPage() {
             1. Acceptance of Terms
           </h2>
           <p className="text-steel dark:text-steel-light">
-            By accessing or using the services provided by Pronaj International, you agree to be bound by these Terms of Service. If you do not
+            By accessing or using the services provided by Pronaj, you agree to be bound by these Terms of Service. If you do not
             agree to these terms, please do not use our services.
           </p>
 
@@ -32,7 +32,7 @@ export default function TermsPage() {
             2. Services
           </h2>
           <p className="text-steel dark:text-steel-light">
-            Pronaj International provides digital services, modular living
+            Pronaj provides digital services, modular living
             solutions, and agricultural trade services. Specific terms may apply
             to individual services and will be provided at the time of
             engagement.
@@ -56,7 +56,7 @@ export default function TermsPage() {
           </h2>
           <p className="text-steel dark:text-steel-light">
             All content, trademarks, and intellectual property on this website
-            are owned by Pronaj International. You may not use, reproduce,
+            are owned by Pronaj. You may not use, reproduce,
             or distribute our content without prior written permission.
           </p>
 
@@ -64,7 +64,7 @@ export default function TermsPage() {
             5. Limitation of Liability
           </h2>
           <p className="text-steel dark:text-steel-light">
-            To the maximum extent permitted by law, Pronaj International shall
+            To the maximum extent permitted by law, Pronaj shall
             not be liable for any indirect, incidental, special, consequential,
             or punitive damages arising from your use of our services.
           </p>
@@ -87,7 +87,7 @@ export default function TermsPage() {
           <p className="font-mono text-sm text-steel dark:text-steel-light">
             legal@pronaj.com
             <br />
-            Pronaj International
+            Pronaj
             <br />
             Airport Residential Area, Accra, Ghana
           </p>

@@ -91,7 +91,7 @@ export function Footer() {
               </div>
             </Link>
             <p className="mt-4 font-heading text-lg font-bold text-concrete">
-              Pronaj International
+              Pronaj
             </p>
             <p className="mt-2 text-sm text-steel-light">
               Building the infrastructure of the future through technology,
@@ -176,13 +176,13 @@ export function Footer() {
           <div className="flex items-center gap-2 rounded-sm border border-steel/20 bg-steel/5 px-3 py-2">
             <Shield className="h-4 w-4 text-safety" />
             <span className="font-mono text-xs text-steel-light">
-              SOC 2 Compliant
+              Security-First
             </span>
           </div>
           <div className="flex items-center gap-2 rounded-sm border border-steel/20 bg-steel/5 px-3 py-2">
             <FileText className="h-4 w-4 text-safety" />
             <span className="font-mono text-xs text-steel-light">
-              Export Certified
+              Export Ready
             </span>
           </div>
           <div className="flex items-center gap-2 rounded-sm border border-steel/20 bg-steel/5 px-3 py-2">
@@ -198,7 +198,7 @@ export function Footer() {
       <div className="border-t border-steel/20 bg-obsidian">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-4 py-4 md:flex-row lg:px-8">
           <p className="font-mono text-[10px] tracking-wider text-steel">
-            © 2026 Pronaj International. All rights reserved.
+            © 2026 Pronaj. All rights reserved.
           </p>
           <div className="flex items-center gap-4">
             <Link

@@ -1,8 +1,8 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | Pronaj International",
-  description: "Privacy Policy for Pronaj International",
+  title: "Privacy Policy | Pronaj",
+  description: "Privacy Policy for Pronaj",
 };
 
 export default function PrivacyPage() {
@@ -24,7 +24,7 @@ export default function PrivacyPage() {
             1. Introduction
           </h2>
           <p className="text-steel dark:text-steel-light">
-            Pronaj International (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) respects your
+            Pronaj (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) respects your
             privacy and is committed to protecting your personal data. This
             privacy policy explains how we collect, use, and safeguard your
             information when you visit our website or use our services.
@@ -88,7 +88,7 @@ export default function PrivacyPage() {
           <p className="font-mono text-sm text-steel dark:text-steel-light">
             privacy@pronaj.com
             <br />
-            Pronaj International
+            Pronaj
             <br />
             Airport Residential Area, Accra, Ghana
           </p>
