@@ -123,7 +123,7 @@ export default function ExportCompliancePage() {
             <p className="mt-2 font-mono text-sm text-steel dark:text-steel-light">
               compliance@pronaj.com
               <br />
-              +233 30 255 0100
+              +233 26 303 9818 · +1 703 615 8392
             </p>
           </section>
         </div>

@@ -16,9 +16,17 @@ const OFFICES = [
     flag: "🇬🇭",
     name: "Accra, Ghana",
     type: "Headquarters",
-    address: "Airport Residential Area, Accra",
+    address: "Lakeside Estates, Nikanika Junction, Accra",
     email: "hello@pronaj.com",
-    phone: "+233 30 255 0100",
+    phone: "+233 26 303 9818",
+  },
+  {
+    flag: "🇺🇸",
+    name: "Fairfax, Virginia",
+    type: "US Office",
+    address: "Fairfax, Virginia, USA",
+    email: "hello@pronaj.com",
+    phone: "+1 703 615 8392",
   },
 ] as const;
 

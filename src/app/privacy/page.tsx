@@ -90,7 +90,7 @@ export default function PrivacyPage() {
             <br />
             Pronaj
             <br />
-            Airport Residential Area, Accra, Ghana
+            Lakeside Estates, Nikanika Junction, Accra, Ghana
           </p>
         </div>
       </div>

@@ -64,7 +64,13 @@ const locations = [
     flag: "🇬🇭",
     name: "Accra, Ghana",
     type: "Headquarters",
-    address: "Airport Residential Area, Accra",
+    address: "Lakeside Estates, Nikanika Junction, Accra",
+  },
+  {
+    flag: "🇺🇸",
+    name: "Fairfax, Virginia",
+    type: "US Office",
+    address: "Fairfax, Virginia, USA",
   },
 ];
 

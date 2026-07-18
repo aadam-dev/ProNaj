@@ -23,7 +23,8 @@
     "goldCoastCroire": "Gold Coast Croire",
     "about": "À propos",
     "careers": "Carrières",
-    "contact": "Contact"
+    "contact": "Contact",
+    "services": "Services"
   },
   "footer": {
     "industries": "Secteurs",
@@ -365,6 +366,70 @@
       "ctaTitle": "Vous ne voyez pas votre poste ?",
       "ctaBody": "Nous recherchons toujours des talents. Envoyez-nous votre CV et nous vous garderons à l'esprit pour de futures opportunités.",
       "ctaButton": "Envoyer votre CV"
+    },
+    "services": {
+      "eyebrow": "Ce que nous faisons",
+      "title1": "Des services conçus",
+      "title2": "pour vous faire avancer",
+      "intro": "De la première ligne de code aux documents prêts pour le financement, Pronaj intervient sur trois domaines clés — en personne à Accra ou en ligne partout dans le monde.",
+      "groups": {
+        "tech": {
+          "title": "Technologie",
+          "desc": "Sites, logiciels et supports numériques au service de votre entreprise.",
+          "items": [
+            "Conception & développement de sites",
+            "Applications web & mobiles",
+            "Applications web progressives (PWA)",
+            "Boutiques e-commerce",
+            "Logiciels sur mesure",
+            "Systèmes ERP & POS",
+            "Flyers & visuels en ligne",
+            "Mise en place du marketing digital"
+          ]
+        },
+        "finance": {
+          "title": "Business & Finance",
+          "desc": "Stratégie et documents pour lever des fonds, planifier et croître.",
+          "items": [
+            "Conseil en entreprise",
+            "Business plans",
+            "Pitch decks",
+            "Modèles financiers",
+            "Accompagnement de startups"
+          ]
+        },
+        "academic": {
+          "title": "Soutien académique",
+          "desc": "Mise en forme, références et relecture — avec intégrité.",
+          "items": [
+            "Mise en forme APA & académique",
+            "Références & citations",
+            "Relecture & correction",
+            "Aide à la recherche & rédaction"
+          ]
+        }
+      },
+      "ctaTitle": "Prêt à commencer ?",
+      "ctaBody": "Dites-nous ce dont vous avez besoin et nous reviendrons avec un périmètre clair et un devis.",
+      "ctaButton": "Demander un devis"
     }
+  },
+  "chat": {
+    "openLabel": "Discutez avec nous",
+    "title": "Demandez à Naj",
+    "subtitle": "Assistant Pronaj",
+    "greeting": "Bonjour 👋 Je suis Naj, l'assistant de Pronaj. Posez-moi vos questions sur nos services web, logiciels, business ou académiques — ou demandez un devis.",
+    "placeholder": "Écrivez votre message…",
+    "send": "Envoyer",
+    "close": "Fermer le chat",
+    "qServices": "Que proposez-vous ?",
+    "qQuote": "Demander un devis",
+    "qAcademic": "Aide académique",
+    "whatsapp": "Discuter sur WhatsApp",
+    "contact": "Formulaire de contact",
+    "unavailable": "Notre assistant est hors ligne pour le moment. Contactez-nous directement, réponse rapide :",
+    "errorRetry": "Une erreur est survenue. Réessayez ou contactez-nous sur WhatsApp.",
+    "disclaimer": "Naj peut se tromper — confirmez les détails importants avec notre équipe.",
+    "poweredBy": "Assistant"
   }
 }

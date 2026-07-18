@@ -23,7 +23,8 @@
     "goldCoastCroire": "Gold Coast Croire",
     "about": "About",
     "careers": "Careers",
-    "contact": "Contact"
+    "contact": "Contact",
+    "services": "Services"
   },
   "footer": {
     "industries": "Industries",
@@ -365,6 +366,70 @@
       "ctaTitle": "Don't See Your Role?",
       "ctaBody": "We're always looking for talented people. Send us your resume and we'll keep you in mind for future opportunities.",
       "ctaButton": "Send Your Resume"
+    },
+    "services": {
+      "eyebrow": "What We Do",
+      "title1": "Services built",
+      "title2": "to move you forward",
+      "intro": "From first line of code to funding-ready documents, Pronaj delivers across three focus areas — in person in Accra or online worldwide.",
+      "groups": {
+        "tech": {
+          "title": "Technology",
+          "desc": "Websites, software and digital assets that work hard for your business.",
+          "items": [
+            "Website Design & Development",
+            "Web & Mobile Apps",
+            "Progressive Web Apps (PWA)",
+            "E-Commerce Stores",
+            "Custom Software",
+            "ERP & POS Systems",
+            "Online Flyers & Graphics",
+            "Digital Marketing Setup"
+          ]
+        },
+        "finance": {
+          "title": "Business & Finance",
+          "desc": "Strategy and documents that help founders raise, plan and grow.",
+          "items": [
+            "Business Consultancy",
+            "Business Plans",
+            "Pitch Decks",
+            "Financial Models",
+            "Startup Advisory"
+          ]
+        },
+        "academic": {
+          "title": "Academic Support",
+          "desc": "Formatting, referencing and editing help — done with integrity.",
+          "items": [
+            "APA & Academic Formatting",
+            "Referencing & Citations",
+            "Proofreading & Editing",
+            "Research & Writing Guidance"
+          ]
+        }
+      },
+      "ctaTitle": "Ready to start?",
+      "ctaBody": "Tell us what you need and we'll come back with a clear scope and quote.",
+      "ctaButton": "Get a quote"
     }
+  },
+  "chat": {
+    "openLabel": "Chat with us",
+    "title": "Ask Naj",
+    "subtitle": "Pronaj assistant",
+    "greeting": "Hi 👋 I'm Naj, Pronaj's assistant. Ask me about our web, software, business or academic services — or get a quote.",
+    "placeholder": "Type your message…",
+    "send": "Send",
+    "close": "Close chat",
+    "qServices": "What do you offer?",
+    "qQuote": "Get a quote",
+    "qAcademic": "Academic help",
+    "whatsapp": "Chat on WhatsApp",
+    "contact": "Contact form",
+    "unavailable": "Our live assistant is offline right now. Reach us directly and we'll reply fast:",
+    "errorRetry": "Something went wrong. Please try again or reach us on WhatsApp.",
+    "disclaimer": "Naj can make mistakes — confirm important details with our team.",
+    "poweredBy": "Assistant"
   }
 }

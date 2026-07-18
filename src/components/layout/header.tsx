@@ -50,6 +50,7 @@ const sectors = [
 ] as const;
 
 const mainNav = [
+  { key: "services", href: "/services" },
   { key: "about", href: "/about" },
   { key: "careers", href: "/careers" },
   { key: "contact", href: "/contact" },

@@ -5,6 +5,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getMessages } from "next-intl/server";
 import { Header, Footer, MobileHub } from "@/components/layout";
 import { ScrollProgress } from "@/components/shared/scroll-progress";
+import { ChatWidget } from "@/components/shared/chat-widget";
 import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({
@@ -103,6 +104,7 @@ export default async function RootLayout({
           <main className="min-h-screen pb-20 lg:pb-0">{children}</main>
           <Footer />
           <MobileHub />
+          <ChatWidget />
         </NextIntlClientProvider>
       </body>
     </html>
