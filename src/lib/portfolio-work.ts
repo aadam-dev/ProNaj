@@ -28,6 +28,16 @@ export const workProjects: WorkProject[] = [
     href: "https://primehubgh.vercel.app",
   },
   {
+    name: "Al Boyut",
+    sector: "Building-Materials Retail",
+    tagline: "Brand, storefront & counter operations",
+    summary:
+      "A builder's merchant on Lakeside Estate, Accra, taken from no logo and no web presence to a full identity, a live storefront and the platform that runs the counter. We delivered the brand system, a 450+ item catalogue with WhatsApp ordering, a POS register, orders, stock-controlled inventory and a verified Google Business Profile, with ongoing operational support.",
+    image: "/work/al-boyut-landing.webp",
+    stack: ["Next.js", "TypeScript", "Drizzle", "PostgreSQL"],
+    href: "https://alboyut.com",
+  },
+  {
     name: "Jireh Natural Foods",
     sector: "Hospitality",
     tagline: "Restaurant site, POS & back office",
