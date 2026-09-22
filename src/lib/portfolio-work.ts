@@ -48,6 +48,26 @@ export const workProjects: WorkProject[] = [
     href: "https://jirehnaturalfoods.vercel.app",
   },
   {
+    name: "Muna Muse",
+    sector: "Fashion",
+    tagline: "African print, finished on WhatsApp",
+    summary:
+      "A dual-market fashion storefront for African print: adire, batik and ankara, shipping from New York to the US and Ghana. Shoppers build a bag on the site; send turns the order into a WhatsApp message. Dollar and cedi prices are set per market, not converted live.",
+    image: "/work/munamuse-landing.webp",
+    stack: ["Next.js", "TypeScript", "Tailwind CSS", "Vercel Blob"],
+    href: "https://temporarymunamusedomain.vercel.app",
+  },
+  {
+    name: "Zaina's Couture",
+    sector: "Fashion",
+    tagline: "Curated fashion, delivered in Accra",
+    summary:
+      "A boutique storefront for a curated fashion label in Adenta. Shoppers browse drops, build a bag and finish on WhatsApp with Mobile Money. Weekend delivery across Greater Accra, free pickup at the Adenta base, and an owner catalogue that updates the shop the moment stock changes.",
+    image: "/work/zainas-landing.webp",
+    stack: ["Next.js", "TypeScript", "Drizzle", "Neon"],
+    href: "https://temporaryzainascouturedomain.vercel.app",
+  },
+  {
     name: "Chale Socks",
     sector: "Retail & E-Commerce",
     tagline: "Afro-luxury commerce, globally",
@@ -60,49 +80,41 @@ export const workProjects: WorkProject[] = [
   {
     name: "Kōyi",
     sector: "Education",
-    tagline: "Multilingual learning platform",
+    tagline: "Exam pathways, schools and Madrasah",
     summary:
-      "A learning platform mapping the West African curriculum — WASSCE, BECE, bridging and career tracks — in English, French and Arabic. Video streaming, certificates and role-based access for students, tutors and admins.",
+      "A public knowledge hub for Ghana and West Africa: exam and career pathway guides (BECE, WASSCE, CSSPS, JAMB, BAC, university), a school explorer, grade tools, and a Madrasah subject catalogue. English, French and Arabic, built around the decisions learners actually face.",
     image: "/work/koyi.webp",
-    stack: ["Next.js", "Node.js", "PostgreSQL", "AWS S3"],
-  },
-  {
-    name: "SIIF",
-    sector: "Financial Services",
-    tagline: "Institutional finance portal",
-    summary:
-      "A high-fidelity identity, academy and intelligence portal for an emerging-markets finance institute. Institutional rigour paired with a distinct, custom visual language.",
-    image: "/work/siif.webp",
-    stack: ["Next.js", "TypeScript", "Supabase", "Framer Motion"],
+    stack: ["Next.js", "TypeScript", "Prisma", "PostgreSQL"],
+    href: "https://koyi-web.vercel.app/en/hub",
   },
   {
     name: "Ethika Finance",
     sector: "FinTech",
-    tagline: "Non-interest banking hub",
+    tagline: "Non-interest finance intelligence",
     summary:
-      "A bilingual knowledge and product hub for Shariah-compliant, non-interest banking, aligned to Bank of Ghana's regulatory framework. Built to make ethical finance legible to everyday customers.",
+      "An institutional guide to non-interest finance in Ghana: a Bank of Ghana regulatory hub, a Knowledge Vault, assumption-led decision tools, and a bank directory. Bilingual English and French. Education around official sources, not a product brochure.",
     image: "/work/ethika.webp",
     stack: ["Next.js", "TypeScript", "Supabase", "next-intl"],
     href: "https://ethika.vercel.app",
+  },
+  {
+    name: "The Makossa Shop",
+    sector: "Retail",
+    tagline: "Mini mart on Makossa Street",
+    summary:
+      "A neighbourhood mini mart in Adenta Housing Down. Shoppers browse the aisles online, send the basket on WhatsApp, and collect in store. Cash and Mobile Money at the counter. The public site carries the shelves, the map pin and opening hours.",
+    image: "/work/makossa-landing.webp",
+    stack: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase"],
+    href: "https://makossashop.vercel.app",
   },
   {
     name: "Rockmotion Auto Group",
     sector: "Logistics & Trade",
     tagline: "US automotive export platform",
     summary:
-      "A logistics-grade platform for exporting vehicles from the US worldwide — live inventory, a shipping calculator, and transparent transit and insurance. Trust engineered into every step.",
+      "A logistics-grade platform for exporting vehicles from the US worldwide: live inventory, a shipping calculator, and transparent transit and insurance. Trust engineered into every step.",
     image: "/work/rockmotion-live.webp",
     stack: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
     href: "https://rockmotion.vercel.app",
-  },
-  {
-    name: "Magilo Art College",
-    sector: "Institutional",
-    tagline: "Art school, design & printing hub",
-    summary:
-      "A polished institutional site for an art college and its design-and-printing arm — programmes, services and enrolment in one editorial system. Structured to grow with the institution.",
-    image: "/work/magilo-live.webp",
-    stack: ["Next.js", "TypeScript", "Tailwind CSS"],
-    href: "https://magiloartcollege.com",
   },
 ];
